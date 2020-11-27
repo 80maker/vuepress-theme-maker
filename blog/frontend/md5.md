@@ -1,8 +1,14 @@
 # 浏览器端不用第三方包也可以获取md5值
 
+[[toc]]
+
 ## 双主角
 
 ### crypto
+
+::: warning
+这家伙是nodejs自带模块,测试了下在浏览器端也能正常使用
+:::
 
 ### FileReader
 
@@ -11,7 +17,7 @@
 ### atob和btoa
 
 ## 关键代码
-``` javascript
+``` js {5}
 // 将reader方法封装成Promisify 
 async readFileData(fileReader, file) {
   return new Promise((resolve, reject) => {

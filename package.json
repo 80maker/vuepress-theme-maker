@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "blog:dev": "vuepress dev blog",
+    "blog:build": "vuepress build blog",
     "deploy": "sh deploy.sh"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vuepress": "^1.7.1"
+    "@vuepress/plugin-back-to-top": "^1.7.1",
+    "@vuepress/plugin-blog": "^1.9.3",
+    "@vuepress/plugin-medium-zoom": "^1.7.1"
   }
 }
