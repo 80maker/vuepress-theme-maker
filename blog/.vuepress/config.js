@@ -78,7 +78,13 @@ module.exports = {
             perPagePosts: 3
           }
         },
-      ]
+      ],
+      sitemap: {
+        hostname: 'https://80shuo.com'
+      },
+      feed: {
+        canonical_base: 'http://80shuo.com',
+      }
     }]
   ]
 }
