@@ -1,6 +1,7 @@
 module.exports = {
   title: '1980\'s Maker',
-  description: '一个出生于80年代的程序员、创[客]、美[食]、动[画]、读[书]、怀[旧]的新手艺人',
+  description: '一个出生于80年代的程序员 -- 喜爱创[客]、美[食]、动[画]、怀[旧]的新手艺人',
+  port: 8088,
   markdown: {
     lineNumbers: true
   },
@@ -10,7 +11,6 @@ module.exports = {
       { text: '创(客)', link: '/maker/' },
       { text: '美(食)', link: '/foods/' },
       { text: '动(画)', link: '/animation/' },
-      { text: '读(书)', link: '/books/' },
       { text: '旧时光', link: '/oldtime/' },
     ],
     logo: '/logo.svg'
@@ -52,15 +52,6 @@ module.exports = {
           dirname: '_animation',
           path: '/animation/',
           itemPermalink: '/animation/:year/:month/:day/:slug.html',
-          pagination: {
-            perPagePosts: 2,
-          },
-        },
-        {
-          id: 'books',
-          dirname: '_books',
-          path: '/books/',
-          itemPermalink: '/books/:year/:month/:day/:slug.html',
           pagination: {
             perPagePosts: 2,
           },
