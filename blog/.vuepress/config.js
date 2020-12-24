@@ -5,7 +5,7 @@ module.exports = {
   markdown: {
     lineNumbers: true
   },
-  theme: require.resolve('../../theme-inside'), // 使用本地主题
+  theme: require.resolve('../../theme-maker'), // 使用本地主题
   themeConfig: require('./config/themeConfig'),
   plugins: require('./config/plugins')
 }

@@ -27,12 +27,11 @@ module.exports = [
       },
       {
         id: "category",
-        keys: ['category'],
+        keys: ['category', 'categories'],
         path: '/category/',
-        layout: 'Category',
         frontmatter: { title: 'Category' },
-        scopeLayout: 'CategoryItem'
-      },
+        layout: 'Category'
+      }
     ],
     sitemap: {
       hostname: 'https://80shuo.com'
