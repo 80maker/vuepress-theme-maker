@@ -5,10 +5,10 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <Navbar
+    <!-- <Navbar
       v-if="shouldShowNavbar"
       @toggle-sidebar="toggleSidebar"
-    />
+    /> -->
 
     <div
       class="sidebar-mask"
@@ -26,19 +26,21 @@
         <slot name="sidebar-bottom" />
       </template>
     </Sidebar>
-    <Home v-if="$page.frontmatter.home" />
-    <Archive v-else-if="$page.frontmatter.archive" />
-    <Page
-      v-else
-      :sidebar-items="sidebarItems"
-    >
-      <template #top>
-        <slot name="page-top" />
-      </template>
-      <template #bottom>
-        <slot name="page-bottom" />
-      </template>
-    </Page>
+    <div class="theme-main">
+      <Home v-if="$page.frontmatter.home" />
+      <Archive v-else-if="$page.frontmatter.archive" />
+      <Page
+        v-else
+        :sidebar-items="sidebarItems"
+      >
+        <template #top>
+          <slot name="page-top" />
+        </template>
+        <template #bottom>
+          <slot name="page-bottom" />
+        </template>
+      </Page>
+    </div>
   </div>
 </template>
 

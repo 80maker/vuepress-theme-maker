@@ -1,0 +1,46 @@
+@import './fonts'
+* {
+  box-sizing border-box
+}
+body, html
+  height 100%
+  font-size 14px
+#app
+  overflow-x: hidden;
+body
+  font-family 'Josefin Sans','PingFang SC','Microsoft YaHei'
+  color $textColor
+  background: #ffffff url('/images/bg.png')
+a
+  &:link, &:visited
+    color $textColor
+  &:hover, &:active
+    color $primaryColor
+.theme-container
+  position relative
+  height 100vh
+.theme-main
+  margin-left 280px
+  position relative
+  height 100%
+  overflow-y auto
+.theme-main__inner
+  position: relative;
+  display: block;
+.router-link-active
+  color $primaryColor
+.tac
+  text-align: center
+.mt-1
+  margin-top 4px
+.mt-2
+  margin-top 8px
+h1,h2,h3,h4,h5,h6
+  font-family impact,'Josefin Sans','PingFang SC','Microsoft YaHei'
+  padding-bottom 0
+  border-bottom none
+@media (min-width: 676px)
+  .theme-main__inner
+    margin 2rem auto
+    max-width 660px
+    min-width 640px
