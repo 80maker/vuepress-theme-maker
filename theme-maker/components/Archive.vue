@@ -1,14 +1,14 @@
 <template>
   <div class="theme-main__inner archive">
     <ul class="archive__list">
-      <li class="archive__item" v-for="(item, key) of archiveList">
-        <h2 class="archive__year">{{key}}</h2>
-        <div class="archive__sub-item" v-for="(subItem, key) of item">
+      <li class="archive__item" v-for="item of archiveList" :key="item.year">
+        <h2 class="archive__year">{{item.year}}</h2>
+        <div class="archive__sub-item" v-for="(subItem, key) of item.list" :key="key">
           <div class="archive__month-wrap">
             <span class="archive__month"> {{key}} </span>
           </div>
           <div class="archive__leaf-list">
-            <a class="archive__leaf-item" :href="leafItem.path" v-for="leafItem in subItem">
+            <a class="archive__leaf-item" :href="leafItem.path" v-for="leafItem in subItem" :key="leafItem.date">
               <span class="archive__date">{{leafItem.date}}</span>
               <span class="archive__title">{{leafItem.title}}</span>
             </a>
@@ -24,6 +24,7 @@ export default {
   computed: {
     archiveList() {
       let res = {};
+      let tmp = [];
       let list = this.$site.pages.filter(item => {
         return item.pid === 'post';
       });
@@ -43,7 +44,16 @@ export default {
         item.date = `${`${month + 1}`.padStart(2, 0)}-${day.padStart(2, 0)}`;
         res[year][monthKey].push(item);
       })
-      return res;
+      for (let [key, item] of Object.entries(res)) {
+        tmp.push({
+          year: +key,
+          list: item
+        });
+      }
+      tmp.sort((a, b) => {
+        return b.year - a.year;
+      })
+      return tmp;
     }
   }
 }

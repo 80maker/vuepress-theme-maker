@@ -10,25 +10,12 @@
       @toggle-sidebar="toggleSidebar"
     /> -->
 
-    <div
-      class="sidebar-mask"
-      @click="toggleSidebar(false)"
-    />
-
-    <Sidebar
-      :items="sidebarItems"
-      @toggle-sidebar="toggleSidebar"
-    >
-      <template #top>
-        <slot name="sidebar-top" />
-      </template>
-      <template #bottom>
-        <slot name="sidebar-bottom" />
-      </template>
-    </Sidebar>
+    <SideBar/>
     <div class="theme-main">
       <Home v-if="$page.frontmatter.home" />
       <Archive v-else-if="$page.frontmatter.archive" />
+      <Category v-else-if="$page.path === '/categories/'" />
+      <Tag v-else-if="$page.path === '/tags/'" />
       <Page
         v-else
         :sidebar-items="sidebarItems"
@@ -47,17 +34,21 @@
 <script>
 import Home from '@parent-theme/components/Home.vue'
 import Archive from '@theme/components/Archive.vue'
+import Category from '@theme/components/Category.vue'
+import Tag from '@theme/components/Tag.vue'
 import Navbar from '@parent-theme/components/Navbar.vue'
 import Page from '@parent-theme/components/Page.vue'
-import Sidebar from '@parent-theme/components/Sidebar.vue'
+import SideBar from '@theme/components/SideBar.vue'
 import { resolveSidebarItems } from '@parent-theme/util'
 export default {
   name: 'Layout',
   components: {
     Home,
     Archive,
+    Category,
+    Tag,
     Page,
-    Sidebar,
+    SideBar,
     Navbar
   },
   data () {

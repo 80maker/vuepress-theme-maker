@@ -17,10 +17,8 @@ module.exports = [
       {
         id: "tag",
         keys: ['tag', 'tags'],
-        path: '/tag/',
-        layout: 'Tag',
+        path: '/tags/',
         frontmatter: { title: 'Tag' },
-        itemlayout: 'Tag',
         pagination: {
           perPagePosts: 3
         }
@@ -28,9 +26,8 @@ module.exports = [
       {
         id: "category",
         keys: ['category', 'categories'],
-        path: '/category/',
-        frontmatter: { title: 'Category' },
-        layout: 'Category'
+        path: '/categories/',
+        frontmatter: { title: 'Category' }
       }
     ],
     sitemap: {
