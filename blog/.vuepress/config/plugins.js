@@ -2,6 +2,10 @@ module.exports = [
   '@vuepress/back-to-top',
   '@vuepress/medium-zoom',
   ['@vuepress/blog', {
+    globalPagination: {
+      prevText: '',
+      nextText: ''
+    },
     directories: [
       {
         id: 'post',
@@ -20,14 +24,17 @@ module.exports = [
         path: '/tags/',
         frontmatter: { title: 'Tag' },
         pagination: {
-          perPagePosts: 3
+          lengthPerPage: 2
         }
       },
       {
         id: "category",
         keys: ['category', 'categories'],
         path: '/categories/',
-        frontmatter: { title: 'Category' }
+        frontmatter: { title: 'Category' },
+        pagination: {
+          lengthPerPage: 10
+        }
       }
     ],
     sitemap: {
@@ -43,5 +50,6 @@ module.exports = [
       clientId: 'Iv1.57b5c522319529f6',
       clientSecret: '7ad0e3d1455a2d6425c813b37a0526e9bd820657',
     }
-  }]
+  }],
+  require.resolve('../../../theme-maker/plugin')
 ]

@@ -39,6 +39,76 @@ h1,h2,h3,h4,h5,h6
   font-family impact,'Josefin Sans','PingFang SC','Microsoft YaHei'
   padding-bottom 0
   border-bottom none
+  line-height 1.5
+// post list
+.post-list
+  &__item
+    position relative
+    display flex
+    padding .5rem 0
+    padding-left 1.5rem
+    line-height 2rem
+    align-items center
+    &:after
+      position absolute
+      content '-'
+      left 0
+      width 1.5rem
+      text-align center
+  &__date
+    letter-spacing 1px
+    font-size .85rem
+    opacity .63
+    padding-right .5rem
+    font-family Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei'
+  &__title
+    font-size 1.15rem
+
+// pagination
+#app .pagination
+  margin-top 2rem
+  margin-bottom 2rem
+#app .pagination > li
+  &.disabled
+    display: none
+  &.page-item
+    &.active > a
+      background $primaryColor
+      color #ffffff
+    > a
+      font-family Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei'
+      margin: 0 3px;
+      padding 0
+      text-align center
+      line-height 2.4rem
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius 50%
+      border none
+      background none
+      &:hover
+        background $primaryColor
+        color #ffffff
+  &:first-child > a, &:last-child > a
+    width: 2.4rem;
+    height: 2.4rem;
+    text-align center
+    line-height 2.4rem
+    padding 0
+    margin 0 3px
+    border-radius 50%
+    background none
+    border none
+    &:hover
+      background $primaryColor
+      color #ffffff
+  &:first-child > a:after, &:last-child > a:after
+    text-align center
+    font-family Icon
+  &:first-child > a:after
+    content "\E90A"
+  &:last-child > a:after
+    content "\E909"
 @media (min-width: 676px)
   .theme-main__inner
     margin 2rem auto

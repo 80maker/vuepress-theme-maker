@@ -12,10 +12,12 @@
 
     <SideBar/>
     <div class="theme-main">
-      <Home v-if="$page.frontmatter.home" />
-      <Archive v-else-if="$page.frontmatter.archive" />
-      <Category v-else-if="$page.path === '/categories/'" />
-      <Tag v-else-if="$page.path === '/tags/'" />
+      <Home v-if="$page.pageType === 'home'" />
+      <Archive v-else-if="$page.pageType === 'archive'" />
+      <Category v-else-if="$page.pageType === 'category'" />
+      <CategoryItem v-else-if="$page.pageType === 'categoryItem'" />
+      <Tag v-else-if="$page.pageType === 'tag'" />
+      <TagItem v-else-if="$page.pageType === 'tagItem'" />
       <Page
         v-else
         :sidebar-items="sidebarItems"
@@ -36,6 +38,8 @@ import Home from '@parent-theme/components/Home.vue'
 import Archive from '@theme/components/Archive.vue'
 import Category from '@theme/components/Category.vue'
 import Tag from '@theme/components/Tag.vue'
+import CategoryItem from '@theme/components/CategoryItem.vue'
+import TagItem from '@theme/components/TagItem.vue'
 import Navbar from '@parent-theme/components/Navbar.vue'
 import Page from '@parent-theme/components/Page.vue'
 import SideBar from '@theme/components/SideBar.vue'
@@ -47,6 +51,8 @@ export default {
     Archive,
     Category,
     Tag,
+    CategoryItem,
+    TagItem,
     Page,
     SideBar,
     Navbar

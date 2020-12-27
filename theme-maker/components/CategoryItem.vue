@@ -1,10 +1,45 @@
 <template>
-  <div>
-    <ul id="default-layout">
-      <li v-for="category in $category.list">
-        <router-link class="page-link" :to="category.path">{{ category.name }}</router-link>
-      </li>
-    </ul>
-    categoryItem
-  </div> 
+  <div class="theme-main__inner">
+    <div class="category-item">
+      <h1 class="category__title">▪ {{$currentCategory.key}}</h1>
+      <div class="post-list">
+        <a class="post-list__item" :href="item.path" v-for="item in postList" :key="item.date">
+          <span class="post-list__date">{{item.date}}</span>
+          <span class="post-list__title">{{item.title}}</span>
+        </a>
+      </div>
+    </div>
+    <Pagination v-if="$pagination.length > 1"/>
+  </div>
 </template>
+<script>
+import { Pagination } from '@vuepress/plugin-blog/lib/client/components';
+export default {
+  components: {
+    Pagination
+  },
+  computed: {
+    postList() {
+      let list = [];
+      console.log(this.$pagination)
+      this.$pagination.pages.map(item => {
+        const date = new Date(item.frontmatter.date);
+        list.push({
+          ...item,
+          date: `${date.toLocaleDateString()}`
+        })
+      });
+      list.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      })
+      return list;
+    }
+  }
+}
+</script>
+<style lang="stylus">
+.category-item
+  background #ffffff
+  border-radius: 6px;
+  padding: 2.15rem;
+</style>

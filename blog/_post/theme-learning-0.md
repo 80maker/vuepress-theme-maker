@@ -1,6 +1,7 @@
 ---
-date: 2020-10-26
+date: 2020-12-26
 category: theme
-tags: VuePress
+tags:
+  - VuePress
 ---
 # 从头开始制作VuePress主题
