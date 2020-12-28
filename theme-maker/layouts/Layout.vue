@@ -5,11 +5,6 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <!-- <Navbar
-      v-if="shouldShowNavbar"
-      @toggle-sidebar="toggleSidebar"
-    /> -->
-
     <SideBar/>
     <div class="theme-main">
       <Home v-if="$page.pageType === 'home'" />
@@ -40,7 +35,6 @@ import Category from '@theme/components/Category.vue'
 import Tag from '@theme/components/Tag.vue'
 import CategoryItem from '@theme/components/CategoryItem.vue'
 import TagItem from '@theme/components/TagItem.vue'
-import Navbar from '@parent-theme/components/Navbar.vue'
 import Page from '@parent-theme/components/Page.vue'
 import SideBar from '@theme/components/SideBar.vue'
 import { resolveSidebarItems } from '@parent-theme/util'
@@ -54,8 +48,7 @@ export default {
     CategoryItem,
     TagItem,
     Page,
-    SideBar,
-    Navbar
+    SideBar
   },
   data () {
     return {

@@ -1,9 +1,10 @@
 module.exports = {
   nav: [
     { text: '🏠 Home', link: '/' },
-    { text: '🐉 创(客)', link: '/category/maker/' },
-    { text: '🔥 动(画)', link: '/category/animation/' },
-    { text: '📽 旧时光', link: '/category/oldtime/' },
+    { text: '📖 Theme', link: '/categories/theme/' },
+    { text: '🐉 Maker', link: '/categories/maker/' },
+    { text: '🔥 Animation', link: '/categories/animation/' },
+    { text: '📽 Old Time', link: '/categories/oldtime/' },
   ],
   logo: '/logo.svg'
 }

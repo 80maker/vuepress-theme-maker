@@ -2,6 +2,9 @@
 * {
   box-sizing border-box
 }
+::selection
+    background-color: $primaryColor;
+    color: #fff;
 body, html
   height 100%
   font-size 14px
@@ -35,11 +38,23 @@ a
   margin-top 4px
 .mt-2
   margin-top 8px
+.mt-4
+  margin-top 16px
+.mt-7
+  margin-top 28px
 h1,h2,h3,h4,h5,h6
   font-family impact,'Josefin Sans','PingFang SC','Microsoft YaHei'
   padding-bottom 0
   border-bottom none
   line-height 1.5
+
+// icon
+.icon-email:before
+    content: "\E913"
+.icon-github:before
+    content: "\E92D";
+.icon-qq:before
+    content: "\E920";
 // post list
 .post-list
   &__item
@@ -109,6 +124,12 @@ h1,h2,h3,h4,h5,h6
     content "\E90A"
   &:last-child > a:after
     content "\E909"
+// 滚动条
+::-webkit-scrollbar
+    width: 8px;
+    height: 6px;
+::-webkit-rollbar-thumscb
+    background-color rgba(96,125,139,.2)
 @media (min-width: 676px)
   .theme-main__inner
     margin 2rem auto

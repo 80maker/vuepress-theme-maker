@@ -16,15 +16,21 @@
         </div>
       </div>
       <SubNav/>
+      <Navbar/>
+      <FooterBar/>
     </div>
   </div>
 </template>
 <script>
+import FooterBar from '@theme/components/FooterBar.vue'
+import Navbar from '@theme/components/Navbar.vue'
 import SubNav from '@theme/components/SubNav.vue'
 export default {
   name: 'SideBar',
   components: {
-    SubNav
+    SubNav,
+    Navbar,
+    FooterBar
   },
 }
 </script>
@@ -43,6 +49,7 @@ export default {
     box-sizing content-box
     width 280px
     height 100%
+    overflow-y auto
 .theme-header
   margin: 1rem 1rem 1em;
   border-radius: 6px;
