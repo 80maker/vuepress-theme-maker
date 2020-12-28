@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Home from '@parent-theme/components/Home.vue'
+import Home from '@theme/components/Home.vue'
 import Archive from '@theme/components/Archive.vue'
 import Category from '@theme/components/Category.vue'
 import Tag from '@theme/components/Tag.vue'
