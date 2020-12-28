@@ -50,6 +50,10 @@ export default {
     width 280px
     height 100%
     overflow-y auto
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+}
 .theme-header
   margin: 1rem 1rem 1em;
   border-radius: 6px;

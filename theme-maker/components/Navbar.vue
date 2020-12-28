@@ -27,19 +27,40 @@ export default {
       text-align: right;
       text-transform: capitalize;
       white-space: pre;
-      line-height: 3rem;
+      height 3rem;
       transition: all .15s;
       cursor pointer
       &:hover
+        color $primaryColor
         font-size: 1.168rem;
+        & > a:after
+          background-color: var(--inside-accent-color);
+          background-image: none;
       > a
+        display block
+        line-height 3rem
+        height 100%
         white-space nowrap
+        &:after
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 7px;
+          height: 7px;
+          background: var(--theme-background);
+          border-radius: 50%;
+          content: "";
+          box-shadow: 0 0 0 1px #e0e0e0;
+          transform: translate(50%,-50%);
         &:not(.external)
           margin-bottom inherit
           border-bottom none
         &:not(.external).router-link-active
           margin-bottom inherit
           border-bottom none
+          &:after
+            background-color: var(--inside-accent-color);
+            background-image: none;
   .search-box
     display block
     text-align right
@@ -49,4 +70,7 @@ export default {
       text-align left
       left 1rem
       width auto
+@media (min-width: $MQMobile)
+  .nav-links a:hover, .nav-links a.router-link-active
+    color $primaryColor
 </style>

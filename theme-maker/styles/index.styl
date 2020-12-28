@@ -5,6 +5,9 @@
 ::selection
     background-color: $primaryColor;
     color: #fff;
+html
+  --theme-background #ffffff url('/images/bg.png')
+  --inside-accent-color $primaryColor
 body, html
   height 100%
   font-size 14px
@@ -13,7 +16,7 @@ body, html
 body
   font-family 'Josefin Sans','PingFang SC','Microsoft YaHei'
   color $textColor
-  background: #ffffff url('/images/bg.png')
+  background var(--theme-background)
 a
   &:link, &:visited
     color $textColor
