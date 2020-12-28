@@ -9,6 +9,8 @@
         class="icon-qq"
         title="qq"
         href="//qm.qq.com/cgi-bin/qm/qr?k=fknyQ434nkzVUWUmJ6rpIPctkS9eyQaZ&jump_from=webapi">qq</a>
+        <a target="_blank" rel="external nofollow noopener"
+        class="icon-feed" title="feed" href="/feed.xml">feed</a>
     </div>
     <p class="copyright">© 2020 ❤️ <a target="_blank" href="https://17ria.com">Neil Chen</a></p>
     <p class="powered">
