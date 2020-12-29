@@ -6,7 +6,7 @@
           <img
             draggable="false"
             class="theme-header__picture"
-            src="/logo.jpg"
+            :src="$themeConfig.logo"
             width="160"
             height="160"/>
             <RouterLink class="theme-header__name" to="/">
@@ -48,7 +48,8 @@ export default {
     padding-right 1rem
     box-sizing content-box
     width 280px
-    height 100%
+    height calc(100% - 105px)
+    padding-bottom 105px
     overflow-y auto
     &::-webkit-scrollbar {
       width: 0;

@@ -1,20 +1,75 @@
 <template>
   <div class="theme-main__inner home">
-    <is-j class="φch">
-      <div class="φck">
-        <!---->
-        <h3 class="φco"><a href="/post/math-jax-ssr-example">MathJax Server-Side Render Example</a></h3>
-        <div class="φci φe">
-          <p>Pre-render MathJax with <a href="https://github.com/ikeq/hexo-filter-mathjax-ssr"
-              target="_blank">hexo-filter-mathjax-ssr</a>.</p>
+    <div class="article-list">
+      <div class="article-item" v-for="item in articleList">
+        <div v-if="item.frontmatter.cover" class="article-cover">
+          <router-link :to="item.path">
+            <img :src="item.frontmatter.cover"/>
+          </router-link>
         </div>
-        <!---->
-        <footer class="φcj"><span class="φcl"><i class="φa icon-calendar φcm"></i>Jun 26, 2019</span>
-          <!---->
+        <h3 class="article-title">
+          <router-link :to="item.path">{{item.title}}</router-link>
+        </h3>
+        <div class="article-desc" v-html="item.frontmatter.desc"></div>
+        <footer class="article-meta">
+          <span><i class="icon-calendar"></i>{{formateDate(item.frontmatter.date)}}</span>
         </footer>
       </div>
-      <!---->
-      <!---->
-    </is-j>
+    </div>
   </div>
 </template>
+<script>
+const DATE_MAP = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+export default {
+  computed: {
+    articleList() {
+      let list = this.$site.pages.filter(item => {
+        return item.pid === 'post';
+      });
+      list = list.sort((a,b) => {
+        let time1 = new Date(a.frontmatter.date);
+        let time2 = new Date(b.frontmatter.date);
+        return time2 - time1;
+      })
+      return list;
+    }
+  },
+  methods: {
+    // todo
+    formateDate(val) {
+      const date = new Date(val);
+      const year = date.getFullYear();
+      const month = date.getMonth();
+      const day = `${date.getDate()}`;
+      const monthKey = DATE_MAP[month];
+      return `${monthKey} ${day.padStart(2, 0)}, ${year}`
+    }
+  }
+}
+</script>
+<style lang="stylus">
+.article-item
+  display: block;
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+  border-radius: 6px;
+  background #ffffff
+.article-title
+  margin 0
+  a
+    display: block;
+    padding: 1.5rem 1.5rem 0;
+    transition: color .15s;
+.article-desc
+  padding: 0 1.5rem;
+  opacity: .8;
+  a
+    border-bottom: 1px dotted;
+    transition: color .15s,border-color .15s,opacity .15s;
+.article-meta
+  margin: 1em 1.5rem 0;
+  padding-bottom: 1.5rem;
+  opacity: .63;
+  [class^="icon-"]
+    margin-right 0.4rem
+</style>

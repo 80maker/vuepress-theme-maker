@@ -50,8 +50,14 @@ h1,h2,h3,h4,h5,h6
   padding-bottom 0
   border-bottom none
   line-height 1.5
+img {
+  max-width: 100%;
+}
 
 // icon
+[class^="icon-"]
+  font-family Icon
+  font-style normal
 .icon-email:before
     content: "\E913"
 .icon-github:before
@@ -61,7 +67,7 @@ h1,h2,h3,h4,h5,h6
 .icon-feed:before
     content: "\E924";
 .icon-calendar:before
-    content: "\E924";
+    content: "\E90E";
 // post list
 .post-list
   &__item

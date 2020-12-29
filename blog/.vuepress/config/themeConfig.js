@@ -5,6 +5,7 @@ module.exports = {
     { text: '🐉 Maker', link: '/categories/maker/' },
     { text: '🔥 Animation', link: '/categories/animation/' },
     { text: '📽 Old Time', link: '/categories/oldtime/' },
+    { text: '🔗 friend-links', link: '/friend-links/' },
   ],
-  logo: '/logo.svg'
+  logo: '/logo.jpg'
 }
