@@ -11,20 +11,21 @@
       <span itemprop="name">{{ author }}</span>
       <span v-if="location" itemprop="address"> &nbsp; in {{ location }}</span>
     </div>
-    <div v-if="date" class="post-meta-date">
+    <div v-if="date" class="post-meta__date">
       <i class="icon-calendar"></i> 
       <time pubdate itemprop="datePublished" :datetime="date">
         {{ resolvedDate }}
       </time>
     </div>
-    <div v-if="resolvedCates" class="post-meta-cates" v-for="item in resolvedCates">
+    <div class="post-meta__reading">
+      <i class="icon-time"></i>
+      {{$page.wordCount}} words in {{$page.readingTime}} min
+    </div>
+    <div class="post-meta__cates" v-for="item in resolvedCates" :key="item.name">
       <i class="icon-cate"></i>
       <router-link :to="item.path">
         {{ item.name}}
       </router-link>
-    </div>
-    <div>
-      {{readingTime}}
     </div>
   </div>
 </template>
@@ -67,9 +68,6 @@ export default {
         return this.cates.includes(item.name);
       })
       return res;
-    },
-    readingTime() {
-      return this.$page.content;
     }
   },
 }
@@ -77,12 +75,24 @@ export default {
 
 <style lang="stylus">
 .post-meta
+  display flex
+  align-items center
+  line-height 2
   > div
     display inline-flex
-    line-height 12px
-    font-size 12px
-    margin-right 20px
-
+    align-items center
+    font-size 14px
+    margin-right 1rem
+  i
+    margin-right 0.4rem
+  a
+    line-height 1.2
+    &:link, &:visited
+      color #ffffff
+      border-top dotted 1px transparent
+      border-bottom dotted 1px transparent
+    &:hover
+      border-bottom-color #ffffff
   svg
     margin-right 5px
     width 14px

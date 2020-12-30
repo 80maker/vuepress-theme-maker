@@ -7,5 +7,6 @@ module.exports = {
     { text: '📽 Old Time', link: '/categories/oldtime/' },
     { text: '🔗 friend-links', link: '/friend-links/' },
   ],
-  logo: '/logo.jpg'
+  logo: '/logo.jpg',
+  wordPerminute: 200
 }

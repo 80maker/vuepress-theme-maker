@@ -15,8 +15,9 @@ module.exports = (options = {}, context) => ({
     }
     if ($page.pid === 'post') {
       const { _strippedContent } = $page;
-      _strippedContent = _strippedContent.replace(/\s/g, '');
-      console.log(11)
+      let content = _strippedContent.replace(/\s/g, '');
+      $page.wordCount = content.length;
+      $page.readingTime = Math.round($page.wordCount / context.themeConfig.wordPerminute || 300); // 分钟
     }
   }
 })

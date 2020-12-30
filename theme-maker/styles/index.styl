@@ -10,6 +10,7 @@ html
   --inside-accent-color $primaryColor
   --inside-accent-color-005: rgba(96, 125, 139, .05);
   --inside-font-base: 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+  --inside-accent-color-01: rgba(96, 125, 139, .1);
 // html {
 //   --inside-accent-color: #607d8b;
 //   --inside-foreground-color: #363636;
@@ -43,7 +44,6 @@ html
 //   --inside-highlight-0f: #edf0f3;
 //   --inside-card-color: #fff;
 //   --inside-accent-color-005: rgba(96, 125, 139, .05);
-//   --inside-accent-color-01: rgba(96, 125, 139, .1);
 //   --inside-accent-color-02: rgba(96, 125, 139, .2);
 //   --inside-accent-color-04: rgba(96, 125, 139, .4);
 //   --inside-accent-color-08: rgba(96, 125, 139, .8)
@@ -85,8 +85,11 @@ a
   margin-top 16px
 .mt-7
   margin-top 28px
+h1
+  font-size: 1.78571rem;
 h1,h2,h3,h4,h5,h6
   font-family impact,'Josefin Sans','PingFang SC','Microsoft YaHei'
+  font-weight: 400;
   padding-bottom 0
   border-bottom none
   line-height 1.5
@@ -112,6 +115,8 @@ img {
     content: "\E903";
 .icon-cate:before
     content: "\E904";
+.icon-time:before
+    content: "\E910";
 // post list
 .post-list
   &__item
