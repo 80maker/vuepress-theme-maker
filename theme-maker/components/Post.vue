@@ -7,6 +7,7 @@
       <header v-if="$frontmatter.cover" :style="headerStyle" class="article__header--hasCover">
         <div class="article__header-con">
           <PostMeta
+            class="post-meta--hasCover"
             :cates="$frontmatter.category || $frontmatter.categories"
             :author="$frontmatter.author"
             :date="$frontmatter.date"

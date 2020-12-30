@@ -88,6 +88,11 @@ export default {
     margin-right 1rem
   i
     margin-right 0.4rem
+  svg
+    margin-right 5px
+    width 14px
+    height 14px
+.post-meta--hasCover
   a
     line-height 1.2
     &:link, &:visited
@@ -96,8 +101,4 @@ export default {
       border-bottom dotted 1px transparent
     &:hover
       border-bottom-color #ffffff
-  svg
-    margin-right 5px
-    width 14px
-    height 14px
 </style>
