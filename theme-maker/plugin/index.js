@@ -13,5 +13,10 @@ module.exports = (options = {}, context) => ({
     } else if ($page.path === '/') {
       return $page.pageType = 'home';
     }
+    if ($page.pid === 'post') {
+      const { _strippedContent } = $page;
+      _strippedContent = _strippedContent.replace(/\s/g, '');
+      console.log(11)
+    }
   }
 })

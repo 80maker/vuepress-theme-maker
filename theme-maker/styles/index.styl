@@ -8,6 +8,46 @@
 html
   --theme-background #ffffff url('/images/bg.png')
   --inside-accent-color $primaryColor
+  --inside-accent-color-005: rgba(96, 125, 139, .05);
+  --inside-font-base: 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+// html {
+//   --inside-accent-color: #607d8b;
+//   --inside-foreground-color: #363636;
+//   --inside-border-color: #e0e0e0;
+//   --inside-background: #ffffff url(https://www.toptal.com/designers/subtlepatterns/patterns/brickwall.png);
+//   --inside-sidebar-background: #607d8b linear-gradient(to bottom, #607d8b 0%, #26323b 100%);
+//   --inside-card-background: #fff;
+//   
+//   --inside-font-logo: Lobster, cursive, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+//   --inside-font-menu: IM Fell DW Pica SC, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+//   --inside-font-heading: impact, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+//   --inside-font-label: Sarpanch, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+//   --inside-font-code: 'Fira Code', Consolas, monospace;
+//   --inside-font-print: 'PingFang SC', 'Microsoft YaHei';
+//   --inside-content-width: 660px;
+//   --inside-highlight-00: #ffffff;
+//   --inside-highlight-01: #e0e0e0;
+//   --inside-highlight-02: #f3f6f7;
+//   --inside-highlight-03: #95a5b3;
+//   --inside-highlight-04: #363636;
+//   --inside-highlight-05: #262b2f;
+//   --inside-highlight-06: #000000;
+//   --inside-highlight-07: #000000;
+//   --inside-highlight-08: #5d6c7b;
+//   --inside-highlight-09: #40464a;
+//   --inside-highlight-0a: #2980b9;
+//   --inside-highlight-0b: #be516e;
+//   --inside-highlight-0c: #237dac;
+//   --inside-highlight-0d: #944770;
+//   --inside-highlight-0e: #239371;
+//   --inside-highlight-0f: #edf0f3;
+//   --inside-card-color: #fff;
+//   --inside-accent-color-005: rgba(96, 125, 139, .05);
+//   --inside-accent-color-01: rgba(96, 125, 139, .1);
+//   --inside-accent-color-02: rgba(96, 125, 139, .2);
+//   --inside-accent-color-04: rgba(96, 125, 139, .4);
+//   --inside-accent-color-08: rgba(96, 125, 139, .8)
+// }
 body, html
   height 100%
   font-size 14px
@@ -68,6 +108,10 @@ img {
     content: "\E924";
 .icon-calendar:before
     content: "\E90E";
+.icon-author:before
+    content: "\E903";
+.icon-cate:before
+    content: "\E904";
 // post list
 .post-list
   &__item
@@ -137,6 +181,25 @@ img {
     content "\E90A"
   &:last-child > a:after
     content "\E909"
+
+// post
+.custom-block.tip, .custom-block.warning, .custom-block.danger
+  display: block;
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  background-color: var(--inside-accent-color-005);
+  border-left: 3px solid var(--inside-accent-color);
+  border-radius: 3px;
+  word-break: break-word;
+  line-height: 1.8;
+  .custom-block-title
+    font-weight bold
+    margin-bottom 0
+    margin-block-end .4rem
+.custom-block p
+  line-height 1.8
+  margin-block-start:  0
+  margin-block-end:  0
 // 滚动条
 ::-webkit-scrollbar
     width: 8px;

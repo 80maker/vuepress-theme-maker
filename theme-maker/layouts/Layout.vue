@@ -13,17 +13,7 @@
       <CategoryItem v-else-if="$page.pageType === 'categoryItem'" />
       <Tag v-else-if="$page.pageType === 'tag'" />
       <TagItem v-else-if="$page.pageType === 'tagItem'" />
-      <Page
-        v-else
-        :sidebar-items="sidebarItems"
-      >
-        <template #top>
-          <slot name="page-top" />
-        </template>
-        <template #bottom>
-          <slot name="page-bottom" />
-        </template>
-      </Page>
+      <Post v-else></Post>
     </div>
   </div>
 </template>
@@ -35,7 +25,7 @@ import Category from '@theme/components/Category.vue'
 import Tag from '@theme/components/Tag.vue'
 import CategoryItem from '@theme/components/CategoryItem.vue'
 import TagItem from '@theme/components/TagItem.vue'
-import Page from '@parent-theme/components/Page.vue'
+import Post from '@theme/components/Post.vue'
 import SideBar from '@theme/components/SideBar.vue'
 import { resolveSidebarItems } from '@parent-theme/util'
 export default {
@@ -47,7 +37,7 @@ export default {
     Tag,
     CategoryItem,
     TagItem,
-    Page,
+    Post,
     SideBar
   },
   data () {

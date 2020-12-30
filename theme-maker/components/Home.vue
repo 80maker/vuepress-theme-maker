@@ -35,7 +35,7 @@ export default {
     }
   },
   methods: {
-    // todo
+    // todo 文章列表提取成公用
     formateDate(val) {
       const date = new Date(val);
       const year = date.getFullYear();

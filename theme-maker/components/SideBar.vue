@@ -2,18 +2,18 @@
   <div class="theme-sidebar">
     <div class="theme-sidebar__inner">
       <div class="theme-header">
-        <div class="theme-header__logo">
+        <RouterLink class="theme-header__logo" to="/">
           <img
             draggable="false"
             class="theme-header__picture"
             :src="$themeConfig.logo"
             width="160"
             height="160"/>
-            <RouterLink class="theme-header__name" to="/">
-              1980's Maker
-            </RouterLink>
-            <p class="theme-header__slogan">一个出生于80年代的程序员 -- 喜爱创[客]、美[食]、动[画]、怀[旧]的新手艺人</p>
-        </div>
+        </RouterLink>
+        <RouterLink class="theme-header__name" to="/">
+          1980's Maker
+        </RouterLink>
+        <p class="theme-header__slogan">一个出生于80年代的程序员 -- 喜爱创[客]、美[食]、动[画]、怀[旧]的新手艺人</p>
       </div>
       <SubNav/>
       <Navbar/>
@@ -60,6 +60,7 @@ export default {
   border-radius: 6px;
   text-align: center;
   background #ffffff
+  display: inline-block;
   &__logo
     display: inline-block;
     margin-top: 2.4rem;
