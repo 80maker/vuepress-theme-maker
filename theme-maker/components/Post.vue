@@ -68,10 +68,12 @@ export default {
     PostMeta,
     Comment
   },
+  data() {
+    return {
+      pageLink: ''
+    }
+  },
   computed: {
-    pageLink() {
-      return `${window.location.href}`
-    },
     headerStyle() {
       if (!this.$frontmatter.cover) return;
       return {
@@ -79,6 +81,9 @@ export default {
         'background-color': this.$frontmatter.coverBgColor
       }
     }
+  },
+  mounted() {
+    this.pageLink = `${window.location.href}`;
   }
 }
 </script>
