@@ -49,7 +49,10 @@ export default {
       type: String,
     },
     cates: {
-      type: [Array, String]
+      type: [Array, String],
+      default: () => {
+        return []
+      }
     }
   },
   computed: {
