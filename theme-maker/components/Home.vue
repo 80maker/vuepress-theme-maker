@@ -21,7 +21,9 @@
 <script>
 const DATE_MAP = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 export default {
+  name: 'Home',
   computed: {
+    // TODO 文章列表提取成公用
     articleList() {
       let list = this.$site.pages.filter(item => {
         return item.pid === 'post';
@@ -35,7 +37,6 @@ export default {
     }
   },
   methods: {
-    // todo 文章列表提取成公用
     formateDate(val) {
       const date = new Date(val);
       const year = date.getFullYear();

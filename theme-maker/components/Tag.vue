@@ -6,6 +6,11 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: 'Tag'
+}
+</script>
 <style lang="stylus">
 .tag
   background #ffffff

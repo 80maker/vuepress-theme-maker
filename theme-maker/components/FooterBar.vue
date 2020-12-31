@@ -21,6 +21,11 @@
     </p>
   </div>
 </template>
+<script>
+export default {
+  name: 'FooterBar'
+}
+</script>
 <style lang="stylus">
   .theme-footer
     position absolute

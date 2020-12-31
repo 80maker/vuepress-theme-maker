@@ -8,5 +8,6 @@ module.exports = {
     { text: '🔗 friend-links', link: '/friend-links/' },
   ],
   logo: '/logo.jpg',
-  wordPerminute: 200
+  wordPerminute: 200,
+  hostname: 'https://80shuo.com'
 }

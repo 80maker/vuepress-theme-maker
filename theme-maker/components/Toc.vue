@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  name: 'Toc',
   data() {
     return {
       activeIndex: 0,

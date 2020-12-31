@@ -8,6 +8,7 @@
 import SearchBox from '@SearchBox'
 import NavLinks from '@parent-theme/components/NavLinks.vue'
 export default {
+  name: 'NavBar',
   components: {
     SearchBox,
     NavLinks

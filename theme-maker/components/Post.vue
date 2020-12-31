@@ -35,6 +35,10 @@
         <div class="article-copyright">
           <ul>
             <li class="article-copyright__item">
+              <strong class="article-copyright__title">Last-updated<span>:</span></strong>
+              <p class="article-copyright__text">{{$page.lastUpdated}}</p>
+            </li>
+            <li class="article-copyright__item">
               <strong class="article-copyright__title">Copyright<span>:</span></strong>
               <p class="article-copyright__text">自由转载-非商用-禁止演绎-保持署名（<a href="http://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh">CC
                   BY-NC-ND 4.0</a>）</p>
@@ -42,15 +46,15 @@
             <li class="article-copyright__item">
               <strong class="article-copyright__title">Link<span>:</span></strong>
               <p class="article-copyright__text"><a :href="pageLink"
-                  title="使用 Canvas 绘制 ⌚">{{pageLink}}</a></p>
+                  :title="$page.title">{{pageLink}}</a></p>
             </li>
           </ul>
         </div>
       </div>
       <div class="article-footer">
-        <PostTag v-for="tag in $frontmatter.tags" :key="tag" :tag="tag" />
-        <hr />
-        <Comment />
+        <PostTag :tags="$frontmatter.tags" />
+        <PostNav/>
+        <Comment/>
         <!-- <Toc /> -->
       </div>
     </article>
@@ -61,18 +65,16 @@
 import PostTag from '@theme/components/PostTag.vue'
 import Toc from '@theme/components/Toc.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
+import PostNav from '@theme/components/PostNav.vue'
 import { Comment } from '@vuepress/plugin-blog/lib/client/components'
 export default {
+  name: 'Post',
   components: {
     PostTag,
     Toc,
     PostMeta,
-    Comment
-  },
-  data() {
-    return {
-      pageLink: ''
-    }
+    Comment,
+    PostNav
   },
   computed: {
     headerStyle() {
@@ -81,10 +83,10 @@ export default {
         'background-image': `url(${this.$frontmatter.cover})`, 
         'background-color': this.$frontmatter.coverBgColor
       }
+    },
+    pageLink() {
+      return `${this.$page.hostname}${this.$page.path}`;
     }
-  },
-  mounted() {
-    this.pageLink = `${window.location.href}`;
   }
 }
 </script>
@@ -131,7 +133,7 @@ export default {
     margin 0
   &__item
     display flex
-    line-height 1.8
+    line-height 2
     align-items center
     span
       margin: 0 .6em 0 .2em;
@@ -139,6 +141,11 @@ export default {
       margin 0
 .article-con
   padding: 0.80625rem 2.15rem 2.15rem;
+.article-footer
+  padding: 0 2.15rem;
+  border-color: var(--inside-border-color);
+  .vssue
+    padding: 10px 0;
 @media (max-width: $MQMobile)
   .vuepress-blog-theme-content
     padding-top 0

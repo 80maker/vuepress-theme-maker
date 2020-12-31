@@ -1,5 +1,6 @@
 module.exports = (options = {}, context) => ({
   extendPageData($page) {
+    $page.hostname = context.themeConfig.hostname;
     if ($page.path === '/archives/') {
       return $page.pageType = 'archive';
     } else if ($page.path === '/categories/') {
