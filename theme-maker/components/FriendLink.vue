@@ -53,17 +53,18 @@ export default {
   &__list
     margin-top 2rem
   &__item
-    margin-top 1rem
-    margin-bottom 1rem
     padding 1rem 2rem
     background #ffffff
-    border-radius: 6px 6px 0 0;
-    border-bottom dotted 1px var(--inside-border-color)
     display flex
     align-items center
+    &:first-child
+      border-top-left-radius 6px
+      border-top-right-radius 6px
+    &:not(:last-child)
+      border-bottom dotted 1px var(--inside-border-color)
     &:last-child
-      border-bottom none
-      border-radius 6px
+      border-bottom-left-radius 6px
+      border-bottom-right-radius 6px
   &__details
     flex auto
     h2
