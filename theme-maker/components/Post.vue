@@ -52,7 +52,7 @@
         </div>
       </div>
       <div class="article-footer">
-        <PostTag :tags="$frontmatter.tags" />
+        <PostTag v-if="$frontmatter.tags" :tags="$frontmatter.tags" />
         <PostNav/>
         <Comment/>
         <!-- <Toc /> -->
@@ -101,8 +101,8 @@ export default {
   font-family PT Serif, Serif
   color $textColor
   position relative
-  .post-title
-    padding-top 0
+ .post-title
+    padding-top 0 
 .article__header
   .post-title
     padding: 4.3rem 2.15rem 2.15rem;
@@ -112,6 +112,7 @@ export default {
     line-height: 3;
     background-color: var(--inside-accent-color-01);
 .article__header--hasCover
+  border-radius: 6px;
   padding-top: 37%;
   background-position: 50% center;
   background-size: cover;
@@ -146,6 +147,14 @@ export default {
   border-color: var(--inside-border-color);
   .vssue
     padding: 10px 0;
+.article-hr
+  margin: .7rem 0 1rem;
+  height: 2px;
+  border: 0;
+  background: #fff;
+  opacity: .5;
+  animation: .4s both;
+  animation-name: line-scale;
 @media (max-width: $MQMobile)
   .vuepress-blog-theme-content
     padding-top 0

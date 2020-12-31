@@ -88,6 +88,8 @@ export default {
     margin-right 1rem
   i
     margin-right 0.4rem
+    &:before
+      vertical-align 3px
   svg
     margin-right 5px
     width 14px

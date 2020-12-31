@@ -13,6 +13,7 @@
       <CategoryItem v-else-if="$page.pageType === 'categoryItem'" />
       <Tag v-else-if="$page.pageType === 'tag'" />
       <TagItem v-else-if="$page.pageType === 'tagItem'" />
+      <FriendLink v-else-if="$page.pageType === 'friendLink'" />
       <Post v-else></Post>
     </div>
   </div>
@@ -26,6 +27,7 @@ import Tag from '@theme/components/Tag.vue'
 import CategoryItem from '@theme/components/CategoryItem.vue'
 import TagItem from '@theme/components/TagItem.vue'
 import Post from '@theme/components/Post.vue'
+import FriendLink from '@theme/components/FriendLink.vue'
 import SideBar from '@theme/components/SideBar.vue'
 import { resolveSidebarItems } from '@parent-theme/util'
 export default {
@@ -38,7 +40,8 @@ export default {
     CategoryItem,
     TagItem,
     Post,
-    SideBar
+    SideBar,
+    FriendLink
   },
   data () {
     return {

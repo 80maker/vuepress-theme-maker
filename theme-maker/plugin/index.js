@@ -13,12 +13,14 @@ module.exports = (options = {}, context) => ({
       return $page.pageType = 'tagItem';
     } else if ($page.path === '/') {
       return $page.pageType = 'home';
+    } else if ($page.path === '/friend-links/') {
+      return $page.pageType = 'friendLink';
     }
     if ($page.pid === 'post') {
       const { _strippedContent } = $page;
       let content = _strippedContent.replace(/\s/g, '');
       $page.wordCount = content.length;
-      $page.readingTime = Math.round($page.wordCount / context.themeConfig.wordPerminute || 300); // 分钟
+      $page.readingTime = Math.round($page.wordCount / (context.themeConfig.wordPerminute || 300)); // 分钟
     }
   }
 })
