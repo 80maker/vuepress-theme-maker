@@ -49,6 +49,6 @@ tags:
 * :turtle: **Toc文章目录组件**
 * :snail: **FriendLink友情链接页**
 * :octopus: **主题插件开发--悬浮球菜单**
-* :tropical_fish: **主题优化篇**
-
-
+* :tropical_fish: **响应式主题**
+* :bat: **主题暗黑模式**
+* :dolphin: **主题优化篇**

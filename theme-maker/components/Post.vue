@@ -95,6 +95,9 @@ export default {
 .post
   background #ffffff
   border-radius: 6px;
+  a
+    border-bottom: 1px dotted;
+    transition: color .15s,border-color .15s,opacity .15s;
 .vuepress-blog-theme-content
   font-size 16px
   letter-spacing 0px
