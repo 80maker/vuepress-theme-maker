@@ -48,7 +48,7 @@ tags:
 * :unicorn: **Post文章详情页**
 * :turtle: **Toc文章目录组件**
 * :snail: **FriendLink友情链接页**
-* :snail: **主题插件开发--悬浮球菜单**
-* :snail: **主题优化篇**
+* :octopus: **主题插件开发--悬浮球菜单**
+* :tropical_fish: **主题优化篇**
 
 
