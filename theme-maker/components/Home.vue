@@ -10,7 +10,7 @@
         <h3 class="article-title">
           <router-link :to="item.path">{{item.title}}</router-link>
         </h3>
-        <div class="article-desc" v-html="item.frontmatter.desc"></div>
+        <div class="article-desc" v-html="item.excerpt"></div>
         <footer class="article-meta">
           <span><i class="icon-calendar"></i>{{formateDate(item.frontmatter.date)}}</span>
         </footer>

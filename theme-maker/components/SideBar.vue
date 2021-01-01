@@ -48,8 +48,8 @@ export default {
     padding-right 1rem
     box-sizing content-box
     width 280px
-    height calc(100% - 105px)
-    padding-bottom 105px
+    height calc(100% - 70px)
+    padding-bottom 70px
     overflow-y auto
     &::-webkit-scrollbar {
       width: 0;

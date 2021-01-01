@@ -13,7 +13,7 @@ module.exports = [
         path: '/post/',
         itemPermalink: '/post/:year/:month/:day/:slug.html',
         pagination: {
-          perPagePosts: 2,
+          perPagePosts: 10,
         },
       }
     ],
@@ -24,7 +24,7 @@ module.exports = [
         path: '/tags/',
         frontmatter: { title: 'Tag' },
         pagination: {
-          lengthPerPage: 2
+          lengthPerPage: 10
         }
       },
       {
