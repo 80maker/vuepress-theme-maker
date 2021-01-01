@@ -31,7 +31,7 @@
           />
       </header>
       <div class="article-con">
-        <Content itemprop="articleBody" />
+        <Content class="article-content" itemprop="articleBody" />
         <div class="article-copyright">
           <ul>
             <li class="article-copyright__item">
@@ -95,6 +95,7 @@ export default {
 .post
   background #ffffff
   border-radius: 6px;
+.article-content
   a
     border-bottom: 1px dotted;
     transition: color .15s,border-color .15s,opacity .15s;
