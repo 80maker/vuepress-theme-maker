@@ -47,7 +47,7 @@ export default {
     margin-right -1rem
     padding-right 1rem
     box-sizing content-box
-    width 280px
+    width $sidebarWidth
     height calc(100% - 70px)
     padding-bottom 70px
     overflow-y auto

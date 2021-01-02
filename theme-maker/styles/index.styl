@@ -1,5 +1,5 @@
-@import './fonts'
-@import './code'
+@require './fonts'
+@require './code'
 * {
   box-sizing border-box
 }
@@ -222,9 +222,4 @@ img {
     height: 6px;
 ::-webkit-rollbar-thumscb
     background-color rgba(96,125,139,.2)
-
-@media (min-width: 676px)
-  .theme-main__inner
-    margin 2rem auto
-    max-width 660px
-    min-width 640px
+@require './mobile'

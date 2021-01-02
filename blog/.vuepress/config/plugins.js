@@ -1,6 +1,12 @@
 module.exports = [
-  '@vuepress/back-to-top',
-  '@vuepress/medium-zoom',
+  ['@vuepress/medium-zoom', {
+    selector: '.article-content img',
+    // medium-zoom options here
+    // See: https://github.com/francoischalifour/medium-zoom#options
+    options: {
+      margin: 16
+    }
+  }],
   ['@vuepress/blog', {
     globalPagination: {
       prevText: '',

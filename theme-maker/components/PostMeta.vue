@@ -81,11 +81,14 @@ export default {
   display flex
   align-items center
   line-height 2
+  flex-wrap wrap
   > div
     display inline-flex
     align-items center
     font-size 14px
     margin-right 1rem
+    white-space nowrap
+    height 2em
   i
     margin-right 0.4rem
     &:before

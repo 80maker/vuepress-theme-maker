@@ -136,14 +136,19 @@ export default {
   line-height: 1.8;
   ul
     margin 0
+    padding-left 0
   &__item
     display flex
     line-height 2
-    align-items center
+    align-items flex-start
     span
       margin: 0 .6em 0 .2em;
     p
+      line-height 2
       margin 0
+  &__title
+    height 2em
+    white-space nowrap
 .article-con
   padding: 0.80625rem 2.15rem 2.15rem;
 .article-footer
