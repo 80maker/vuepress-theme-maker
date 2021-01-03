@@ -4,9 +4,9 @@
       v-for="(item, index) in $page.headers"
       ref="chairTocItem"
       :key="index"
-      class="vuepress-toc-item"
+      class="theme-toc-item"
       :class="[
-        `vuepress-toc-h${item.level}`,
+        `theme-toc-h${item.level}`,
         { active: activeIndex === index },
       ]"
     >
@@ -54,7 +54,7 @@ export default {
 <style lang="stylus">
 .table-of-contents
   display none !important
-.vuepress-toc
+.theme-toc
   position fixed
   display none
   max-height 100vh
@@ -66,7 +66,7 @@ export default {
   box-sizing border-box
   /* background: #fff; */
   z-index 0
-  .vuepress-toc-item
+  .theme-toc-item
     position relative
     padding 0.1rem 0.6rem 0.1rem 1.5rem
     line-height 1.5rem
@@ -92,10 +92,6 @@ export default {
       a
         color $accentColor
   for i in range(3, 6)
-    .vuepress-toc-h{i} a
+    .theme-toc-h{i} a
       padding-left 1rem * (i - 2)
-// for vuepress-toc
-@media (min-width: 1300px)
-  .vuepress-toc
-    display block
 </style>

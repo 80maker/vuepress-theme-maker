@@ -16,6 +16,7 @@
       <FriendLink v-else-if="$page.pageType === 'friendLink'" />
       <Post v-else></Post>
     </div>
+    <FloatMenu/>
   </div>
 </template>
 

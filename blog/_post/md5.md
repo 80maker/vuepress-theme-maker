@@ -4,8 +4,6 @@ category: frontend
 title: 浏览器端不用第三方包也可以获取md5值
 ---
 
-[[toc]]
-
 > 利益于JS的同构特性,crypto虽然是Node.js的自带模块,但同时也能用于Web浏览器端。
 
 <!-- more -->

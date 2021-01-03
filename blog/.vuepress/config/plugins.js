@@ -57,5 +57,6 @@ module.exports = [
       clientSecret: '7ad0e3d1455a2d6425c813b37a0526e9bd820657',
     }
   }],
-  require.resolve('../../../theme-maker/plugin')
+  require('../../../theme-maker/plugin/theme-utils'),
+  require('../../../theme-maker/plugin/float-menu')
 ]
