@@ -1,17 +1,24 @@
 <template>
-  <div class="float-menu-wrap">
+  <div class="float-menu-wrap" :class="{'float-menu-wrap--open': isSHow}">
     <Toc/>
-    <div class="float-menu" @click="toggleMenu" :class="{'float-menu--open': isSHow}">
+    <div class="float-menu__list">
+      <span class="icon-up"></span>
+      <span class="icon-down"></span>
+      <span class="icon-sidebar"></span>
+      <span class="icon-toc"></span>
+      <span class="icon-search"></span>
+    </div>
+    <div class="float-menu" @click="toggleMenu">
       <svg
         class="float-menu__progress"
         width="100%"
         height="100%">
         <circle
           ref="js_progressCircle"
-          :style="computedCircleStyle"
+          :stroke-dasharray="computedStrokeDasharray"
           stroke="currentcolor"
           stroke-width="2%"
-          fill="transparent"
+          fill="none"
           r="48%"
           cx="50%"
           cy="50%"/>
@@ -19,7 +26,6 @@
       <div class="float-menu__dot"  v-if="scrollTop === 0"></div>
       <div class="float-menu__text" v-else>{{count}}<span>%</span></div>
     </div>
-    <span class="icon-sidebar"></span>
   </div>
 </template>
 <script>
@@ -38,14 +44,10 @@ export default {
     }
   },
   computed: {
-    computedCircleStyle() {
-      if (!this.$refs['js_progressCircle']) return;
-      const circumference = radius * 2 * Math.PI;
-      const offset = circumference - this.count / 100 * circumference;
-      circle.style.strokeDashoffset = offset;
-      return {
-        strokeDashoffset: `${offset}`
-      }
+    computedStrokeDasharray() {
+      const circumference = 48 * 2 * Math.PI;
+      const offset = this.count / 100 * circumference;
+      return `${offset}% ${circumference}%`
     }
   },
   mounted() {
@@ -81,6 +83,30 @@ export default {
   z-index: 1;
   color: #fff;
   text-align: center;
+  &--open
+    .float-menu__dot
+      transform rotate(-90deg)
+    .float-menu__list > span
+      opacity: 1;
+      &:nth-child(3n-2)
+        top: 0;
+        right: 0;
+      &:nth-child(3n)
+        bottom: 0;
+        left: 0;
+      &:nth-child(3n-1)
+        top: 0;
+        left: 0;
+      &:first-child
+        transform: translate3d(0,-140%,0);
+      &:nth-child(2)
+        transform: translate3d(-98.99495%,-98.99495%,0);
+      &:nth-child(3)
+        transform: translate3d(-140%,0,0);
+      &:nth-child(4)
+        transform: translate3d(0,-280%,0);
+      &:nth-child(5)
+        transform: translate3d(-107.15136%,-258.68627%,0);
 .float-menu
   position relative
   -webkit-tap-highlight-color rgba(0,0,0,0)
@@ -91,8 +117,6 @@ export default {
   display flex
   align-items center
   justify-content center
-  &--open &__dot
-    transform rotate(-90deg)
   &:before
     content ''
     position absolute
@@ -101,6 +125,24 @@ export default {
     border-radius 50%
     background-color $primaryColor
     box-shadow 0 0 8px #ccc
+  &__list
+    width 4.4rem
+    height 0
+    -webkit-tap-highlight-color: transparent;
+    > span
+      position: absolute;
+      z-index: -1;
+      width: 3.4rem;
+      height: 3.4rem;
+      border-radius: 50%;
+      background-color: rgba(0,0,0,.8);
+      box-shadow: 0 2px 4px 1px rgba(0,0,0,.2);
+      font-size: 1.5rem;
+      line-height: 3.4rem;
+      opacity: 0;
+      cursor: pointer;
+      transition: .4s cubic-bezier(0,0,.382,1.618);
+      transition-property: transform,opacity;
   &__progress
     position absolute
     width 100%
