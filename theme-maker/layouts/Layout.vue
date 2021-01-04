@@ -6,7 +6,7 @@
     @touchend="onTouchEnd"
   >
     <SideBar/>
-    <div class="theme-main">
+    <div class="theme-main" id="js_themeMain">
       <Home v-if="$page.pageType === 'home'" />
       <Archive v-else-if="$page.pageType === 'archive'" />
       <Category v-else-if="$page.pageType === 'category'" />
@@ -16,7 +16,6 @@
       <FriendLink v-else-if="$page.pageType === 'friendLink'" />
       <Post v-else></Post>
     </div>
-    <FloatMenu/>
   </div>
 </template>
 

@@ -7,6 +7,8 @@
         width="100%"
         height="100%">
         <circle
+          ref="js_progressCircle"
+          :style="computedCircleStyle"
           stroke="currentcolor"
           stroke-width="2%"
           fill="transparent"
@@ -14,14 +16,15 @@
           cx="50%"
           cy="50%"/>
       </svg>
-      <div class="float-menu__dot"></div>
-      <!-- <div class="float-menu__text">71<span>%</span></div> -->
+      <div class="float-menu__dot"  v-if="scrollTop === 0"></div>
+      <div class="float-menu__text" v-else>{{count}}<span>%</span></div>
     </div>
     <span class="icon-sidebar"></span>
   </div>
 </template>
 <script>
 import Toc from '@theme/components/Toc.vue'
+import debounce from 'lodash.debounce'
 export default {
   name: 'FloatMenu',
   components: {
@@ -29,10 +32,41 @@ export default {
   },
   data() {
     return {
-      isSHow: false
+      isSHow: false,
+      scrollTop: 0,
+      count: 0
     }
   },
+  computed: {
+    computedCircleStyle() {
+      if (!this.$refs['js_progressCircle']) return;
+      const circumference = radius * 2 * Math.PI;
+      const offset = circumference - this.count / 100 * circumference;
+      circle.style.strokeDashoffset = offset;
+      return {
+        strokeDashoffset: `${offset}`
+      }
+    }
+  },
+  mounted() {
+    this.scrollTop = this.getScrollTop();
+    window.addEventListener('scroll', () => {
+      const nScrollHeight = document.documentElement.scrollHeight;
+      const nClientHeight = document.documentElement.clientHeight;
+      this.scrollTop = this.getScrollTop()
+      this.count = Math.floor(this.scrollTop / (nScrollHeight - nClientHeight) * 100);
+    })
+  },
   methods: {
+     getScrollTop () {
+      return window.pageYOffset
+        || document.documentElement.scrollTop
+        || document.body.scrollTop || 0
+    },
+    scrollToTop () {
+      document.scrollTo({ top: 0, behavior: 'smooth' })
+      this.scrollTop = 0
+    },
     toggleMenu() {
       this.isSHow = !this.isSHow;
     }

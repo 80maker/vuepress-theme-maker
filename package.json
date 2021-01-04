@@ -16,5 +16,7 @@
     "@vuepress/plugin-medium-zoom": "^1.7.1",
     "vuepress": "^1.7.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
+  }
 }
