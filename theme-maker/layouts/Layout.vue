@@ -6,7 +6,7 @@
     @touchend="onTouchEnd"
   >
     <SideBar/>
-    <div class="theme-main" id="js_themeMain">
+    <div class="theme-main">
       <Home v-if="$page.pageType === 'home'" />
       <Archive v-else-if="$page.pageType === 'archive'" />
       <Category v-else-if="$page.pageType === 'category'" />
@@ -86,14 +86,16 @@ export default {
       return [
         {
           'no-navbar': !this.shouldShowNavbar,
-          'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': !this.shouldShowSidebar
+          'sidebar-open': this.isSidebarOpen
         },
         userPageClass
       ]
     }
   },
   mounted () {
+    this.$eventBus.$on('EV_TOGGLE_SIDE_BAR', () => {
+      this.isSidebarOpen = !this.isSidebarOpen;
+    })
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
     })
@@ -124,3 +126,6 @@ export default {
   }
 }
 </script>
+<style lang="stylus">
+@require '../styles/mobile'
+</style>

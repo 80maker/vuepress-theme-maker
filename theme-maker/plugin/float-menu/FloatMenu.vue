@@ -4,7 +4,7 @@
     <div class="float-menu__list">
       <span class="icon-up"></span>
       <span class="icon-down"></span>
-      <span class="icon-sidebar"></span>
+      <span class="icon-sidebar" @click="handleToggleSideBar"></span>
       <span class="icon-toc"></span>
       <span class="icon-search"></span>
     </div>
@@ -57,7 +57,7 @@ export default {
       const nClientHeight = document.documentElement.clientHeight;
       this.scrollTop = this.getScrollTop()
       this.count = Math.floor(this.scrollTop / (nScrollHeight - nClientHeight) * 100);
-    })
+    });
   },
   methods: {
      getScrollTop () {
@@ -71,6 +71,9 @@ export default {
     },
     toggleMenu() {
       this.isSHow = !this.isSHow;
+    },
+    handleToggleSideBar() {
+      this.$eventBus.$emit('EV_TOGGLE_SIDE_BAR')
     }
   }
 }
@@ -78,7 +81,7 @@ export default {
 <style lang="stylus">
 .float-menu-wrap
   position: fixed;
-  right: 1.3rem;
+  right: 1rem;
   bottom: 1.3rem;
   z-index: 1;
   color: #fff;
@@ -88,6 +91,8 @@ export default {
       transform rotate(-90deg)
     .float-menu__list > span
       opacity: 1;
+      &.icon-sidebar
+        display none
       &:nth-child(3n-2)
         top: 0;
         right: 0;
@@ -131,6 +136,8 @@ export default {
     -webkit-tap-highlight-color: transparent;
     > span
       position: absolute;
+      right  0
+      bottom 0
       z-index: -1;
       width: 3.4rem;
       height: 3.4rem;
@@ -183,4 +190,8 @@ export default {
       background-color inherit
       top 200%
       left 0
+@media (max-width: $MQMobile)
+  .float-menu-wrap .float-menu__list
+    span.icon-sidebar
+      display: block
 </style>

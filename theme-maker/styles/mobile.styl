@@ -46,5 +46,65 @@
     max-width 660px
     min-width 640px
 @media (max-width: $MQMobile)
+  .theme-main
+    transform-origin: 0 42%;
+    transition-property transform border-radius
+    transition-duration .4s
+  .theme-sidebar
+    border-right none
+  .theme-container
+    &.sidebar-open
+      background var(--inside-sidebar-background)
+      .theme-sidebar
+        opacity 1
+      .theme-main
+        border-radius: .85rem;
+        transform: translate3d(302px, 0px, 0px) scale3d(0.86, 0.86, 1);
+        &__inner
+          height 100vh
+          overflow hidden
+        &:before
+          position: absolute;
+          border-radius: .85rem;
+          top: 1.6rem;
+          bottom: 1.6rem;
+          left: -1.6rem;
+          z-index: -1;
+          width: 100%;
+          background-color: hsla(0,0%,100%,.2);
+          content: "";
   .article-item
     margin 1rem!important
+  .theme-sidebar__inner
+    padding-bottom 0
+    height 100vh
+    .theme-header
+      background: none
+      &__name, &__slogan
+        color: #ffffff
+  .theme-SubNav
+    background: none
+    a:link, a:visited
+      color #ffffff
+  .theme-footer
+    color #ffffff
+    position static
+    text-align center
+    padding: 1rem 1rem .75rem;
+    a:link, a:visited
+      color #ffffff
+  .theme-nav
+    .search-box
+      padding-left: 3rem;
+      padding-right 3rem
+      text-align: left;
+      input
+        width 100%
+        left 0
+    .nav-links .nav-item
+      padding-left: 3rem;
+      text-align: left;
+      a:link, a:visited
+        color #ffffff
+      a:after
+        content: none
