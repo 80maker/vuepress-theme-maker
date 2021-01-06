@@ -55,7 +55,7 @@ export default {
   },
   mounted() {
     this.mobileWidth = parseInt(getCssVar('--theme-mobile-width').trim());
-    this.width = window.innerWidth();
+    this.width = window.innerWidth;
     window.addEventListener('resize', () => {
       this.width = window.innerWidth;
     }, false)
