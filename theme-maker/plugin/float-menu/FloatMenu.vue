@@ -53,13 +53,11 @@ export default {
       return `${offset}% ${circumference}%`
     }
   },
-  created() {
+  mounted() {
     this.mobileWidth = parseInt(getCssVar('--theme-mobile-width').trim());
     window.addEventListener('resize', () => {
       this.width = window.innerWidth;
     }, false)
-  },
-  mounted() {
     this.scrollTop = this.getScrollTop();
     window.addEventListener('scroll', () => {
       const nScrollHeight = document.documentElement.scrollHeight;
