@@ -143,6 +143,7 @@ export default {
       width 1.5rem
       text-align center
   &__date
+    white-space nowrap
     letter-spacing 1px
     font-size .85rem
     opacity .63

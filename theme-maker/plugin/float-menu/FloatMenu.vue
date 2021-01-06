@@ -2,10 +2,10 @@
   <div class="float-menu-wrap" :class="{'float-menu-wrap--open': isSHow}">
     <Toc/>
     <div class="float-menu__list">
-      <span class="icon-up"></span>
-      <span class="icon-down"></span>
-      <span class="icon-sidebar" @click="handleToggleSideBar"></span>
-      <span class="icon-toc"></span>
+      <span class="icon-up" @click="scrollToTop"></span>
+      <span class="icon-down" @click="scrollToBottom"></span>
+      <span class="icon-sidebar" @click="handleToggleSideBar" v-if="width < mobileWidth"></span>
+      <span class="icon-toc" v-if="$page.pid === 'post'"></span>
       <span class="icon-search"></span>
     </div>
     <div class="float-menu" @click="toggleMenu">
@@ -23,7 +23,7 @@
           cx="50%"
           cy="50%"/>
       </svg>
-      <div class="float-menu__dot"  v-if="scrollTop === 0"></div>
+      <div class="float-menu__dot"  v-if="count === 0"></div>
       <div class="float-menu__text" v-else>{{count}}<span>%</span></div>
     </div>
   </div>
@@ -31,6 +31,7 @@
 <script>
 import Toc from '@theme/components/Toc.vue'
 import debounce from 'lodash.debounce'
+import { getCssVar } from '@theme/util'
 export default {
   name: 'FloatMenu',
   components: {
@@ -40,7 +41,9 @@ export default {
     return {
       isSHow: false,
       scrollTop: 0,
-      count: 0
+      count: 0,
+      mobileWidth: 0,
+      width: 0
     }
   },
   computed: {
@@ -49,6 +52,12 @@ export default {
       const offset = this.count / 100 * circumference;
       return `${offset}% ${circumference}%`
     }
+  },
+  created() {
+    this.mobileWidth = parseInt(getCssVar('--theme-mobile-width').trim());
+    window.addEventListener('resize', () => {
+      this.width = window.innerWidth;
+    }, false)
   },
   mounted() {
     this.scrollTop = this.getScrollTop();
@@ -66,8 +75,10 @@ export default {
         || document.body.scrollTop || 0
     },
     scrollToTop () {
-      document.scrollTo({ top: 0, behavior: 'smooth' })
-      this.scrollTop = 0
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    },
+    scrollToBottom () {
+      window.scrollTo({ top: document.documentElement.clientHeight + window.innerHeight, behavior: 'smooth' })
     },
     toggleMenu() {
       this.isSHow = !this.isSHow;
@@ -91,8 +102,6 @@ export default {
       transform rotate(-90deg)
     .float-menu__list > span
       opacity: 1;
-      &.icon-sidebar
-        display none
       &:nth-child(3n-2)
         top: 0;
         right: 0;
