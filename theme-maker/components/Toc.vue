@@ -1,5 +1,5 @@
 <template>
-  <div class="theme-toc">
+  <Sticker v-if="visible" class="theme-toc" v-bind="$attrs" :class="{'theme-toc--open': isShow}">
     <div
       v-for="(item, index) in $page.headers"
       ref="chairTocItem"
@@ -12,15 +12,28 @@
     >
       <a :href="`#${item.slug}`" :title="item.title">{{ item.title }}</a>
     </div>
-  </div>
+  </Sticker>
 </template>
 
 <script>
+import Sticker from './Sticker.vue'
+let initTop
+// get offset top
+function getAbsoluteTop(dom) {
+  return dom && dom.getBoundingClientRect
+    ? dom.getBoundingClientRect().top +
+        document.body.scrollTop +
+        document.documentElement.scrollTop
+    : 0
+}
 export default {
-  name: 'Toc',
+  components: {
+    Sticker,
+  },
   data() {
     return {
       activeIndex: 0,
+      isShow: false
     }
   },
   computed: {
@@ -48,32 +61,102 @@ export default {
     },
     $route() {},
   },
+  mounted() {
+    this.$eventBus.$on('EV_TOGGLE_TOC', () => {
+      this.isShow = !this.isShow;
+    })
+    // sync visible to parent component
+    const syncVisible = () => {
+      this.$emit('visible-change', this.visible)
+    }
+    syncVisible()
+    this.$watch('visible', syncVisible)
+    // binding event
+    setTimeout(() => this.triggerEvt(), 1000)
+    this._onScroll = () => this.onScroll()
+    this._onHashChange = () => {
+      const hash = decodeURIComponent(location.hash.substring(1))
+      const index = (this.$page.headers || []).findIndex(h => h.slug === hash)
+      if (index >= 0) this.activeIndex = index
+      const dom = hash && document.getElementById(hash)
+      if (dom) window.scrollTo(0, getAbsoluteTop(dom) - 20)
+    }
+    window.addEventListener('scroll', this._onScroll)
+    // window.addEventListener('hashchange', this._onHashChange);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this._onScroll)
+    window.removeEventListener('hashchange', this._onHashChange)
+  },
+  methods: {
+    onScroll() {
+      if (initTop === undefined) {
+        initTop = getAbsoluteTop(this.$el)
+      }
+      // update position
+      const scrollTop =
+        document.body.scrollTop + document.documentElement.scrollTop
+      const headings = this.$page.headers || []
+      // change active toc with scrolling
+      let i = 0
+      const addLink = index => {
+        this.activeIndex = index
+      }
+      for (; i < headings.length; i++) {
+        const dom = document.getElementById(headings[i].slug)
+        const top = getAbsoluteTop(dom)
+        if (top - 50 < scrollTop) {
+          addLink(i)
+        } else {
+          if (!i) addLink(i)
+          break
+        }
+      }
+    },
+    triggerEvt() {
+      this._onScroll()
+      this._onHashChange()
+    },
+  },
 }
 </script>
-
 <style lang="stylus">
 .table-of-contents
   display none !important
 .theme-toc
+  text-align left
+  transition-duration: 378ms;
+  transform: translateX(100%);
+  transition-property transform
+  box-shadow: -2px 0 3px rgba(0,0,0,.1);
   position fixed
-  display none
-  max-height 100vh
+  visibility hidden
+  height 100vh
   max-width 220px
   overflow-y auto
-  padding-top 5rem
+  padding 1rem 0
+  width 252px
   top 0
-  right 10px
+  right 0
   box-sizing border-box
-  /* background: #fff; */
+  background: var(--theme-card-background);
   z-index 0
+  &--open
+    visibility visible
+    display block
+    transform translateX(0)
   .theme-toc-item
     position relative
-    padding 0.1rem 0.6rem 0.1rem 1.5rem
-    line-height 1.5rem
-    border-left 1px solid rgba(0, 0, 0, 0.08)
+    line-height: 1.4;
+    border-left 2px solid rgba(0, 0, 0, 0.08)
     overflow hidden
+    &.theme-toc-h3 a
+      padding-left 2.5em
+    &.theme-toc-h4 a
+      padding-left 3.5em
     a
       display block
+      padding: .5em 1em;
       color $textColor
       width 100%
       box-sizing border-box

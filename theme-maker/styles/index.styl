@@ -9,46 +9,45 @@
 html
   --theme-mobile-width $MQMobile
   --theme-background #ffffff url('/images/bg.png')
-  --inside-accent-color $primaryColor
-  --inside-accent-color-005: rgba(96, 125, 139, .05);
-  --inside-font-base: 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-  --inside-accent-color-01: rgba(96, 125, 139, .1);
-  --inside-border-color: #e0e0e0;
-  --inside-font-label: Sarpanch, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-  --inside-sidebar-background: $primaryColor linear-gradient(to bottom, $primaryColor 0%, darken($primaryColor, 20%) 100%);
+  --theme-accent-color $primaryColor
+  --theme-accent-color-005: rgba(96, 125, 139, .05);
+  --theme-font-base: 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+  --theme-accent-color-01: rgba(96, 125, 139, .1);
+  --theme-border-color: #e0e0e0;
+  --theme-font-label: Sarpanch, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+  --theme-sidebar-background: $primaryColor linear-gradient(to bottom, $primaryColor 0%, darken($primaryColor, 20%) 100%);
+  --theme-card-background: #fff;
 // html {
-//   --inside-accent-color: #607d8b;
-//   --inside-foreground-color: #363636;
-//   --inside-background: #ffffff url(https://www.toptal.com/designers/subtlepatterns/patterns/brickwall.png);
-//   --inside-card-background: #fff;
-//   
-//   --inside-font-logo: Lobster, cursive, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-//   --inside-font-menu: IM Fell DW Pica SC, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-//   --inside-font-heading: impact, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-//   --inside-font-code: 'Fira Code', Consolas, monospace;
-//   --inside-font-print: 'PingFang SC', 'Microsoft YaHei';
-//   --inside-content-width: 660px;
-//   --inside-highlight-00: #ffffff;
-//   --inside-highlight-01: #e0e0e0;
-//   --inside-highlight-02: #f3f6f7;
-//   --inside-highlight-03: #95a5b3;
-//   --inside-highlight-04: #363636;
-//   --inside-highlight-05: #262b2f;
-//   --inside-highlight-06: #000000;
-//   --inside-highlight-07: #000000;
-//   --inside-highlight-08: #5d6c7b;
-//   --inside-highlight-09: #40464a;
-//   --inside-highlight-0a: #2980b9;
-//   --inside-highlight-0b: #be516e;
-//   --inside-highlight-0c: #237dac;
-//   --inside-highlight-0d: #944770;
-//   --inside-highlight-0e: #239371;
-//   --inside-highlight-0f: #edf0f3;
-//   --inside-card-color: #fff;
-//   --inside-accent-color-005: rgba(96, 125, 139, .05);
-//   --inside-accent-color-02: rgba(96, 125, 139, .2);
-//   --inside-accent-color-04: rgba(96, 125, 139, .4);
-//   --inside-accent-color-08: rgba(96, 125, 139, .8)
+//   --theme-accent-color: #607d8b;
+//   --theme-foreground-color: #363636;
+//   --theme-background: #ffffff url(https://www.toptal.com/designers/subtlepatterns/patterns/brickwall.png);
+//   --theme-font-logo: Lobster, cursive, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+//   --theme-font-menu: IM Fell DW Pica SC, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+//   --theme-font-heading: impact, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+//   --theme-font-code: 'Fira Code', Consolas, monospace;
+//   --theme-font-print: 'PingFang SC', 'Microsoft YaHei';
+//   --theme-content-width: 660px;
+//   --theme-highlight-00: #ffffff;
+//   --theme-highlight-01: #e0e0e0;
+//   --theme-highlight-02: #f3f6f7;
+//   --theme-highlight-03: #95a5b3;
+//   --theme-highlight-04: #363636;
+//   --theme-highlight-05: #262b2f;
+//   --theme-highlight-06: #000000;
+//   --theme-highlight-07: #000000;
+//   --theme-highlight-08: #5d6c7b;
+//   --theme-highlight-09: #40464a;
+//   --theme-highlight-0a: #2980b9;
+//   --theme-highlight-0b: #be516e;
+//   --theme-highlight-0c: #237dac;
+//   --theme-highlight-0d: #944770;
+//   --theme-highlight-0e: #239371;
+//   --theme-highlight-0f: #edf0f3;
+//   --theme-card-color: #fff;
+//   --theme-accent-color-005: rgba(96, 125, 139, .05);
+//   --theme-accent-color-02: rgba(96, 125, 139, .2);
+//   --theme-accent-color-04: rgba(96, 125, 139, .4);
+//   --theme-accent-color-08: rgba(96, 125, 139, .8)
 // }
 body, html
   min-height 100vh
@@ -201,8 +200,8 @@ img {
   display: block;
   margin: 2rem 0;
   padding: 1rem 1.5rem;
-  background-color: var(--inside-accent-color-005);
-  border-left: 3px solid var(--inside-accent-color);
+  background-color: var(--theme-accent-color-005);
+  border-left: 3px solid var(--theme-accent-color);
   border-radius: 3px;
   word-break: break-word;
   line-height: 1.8;

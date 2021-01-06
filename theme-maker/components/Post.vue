@@ -111,7 +111,7 @@ export default {
   .post-meta
     padding: 0px 2.15rem;
     line-height: 3;
-    background-color: var(--inside-accent-color-01);
+    background-color: var(--theme-accent-color-01);
 .article__header--hasCover
   border-radius: 6px;
   padding-top: 37%;
@@ -126,8 +126,8 @@ export default {
   display: block;
   margin: 2rem 0;
   padding: 1rem 1.5rem;
-  background-color: var(--inside-accent-color-005);
-  border-left: 3px solid var(--inside-accent-color);
+  background-color: var(--theme-accent-color-005);
+  border-left: 3px solid var(--theme-accent-color);
   border-radius: 3px;
   word-break: break-word;
   line-height: 1.8;
@@ -150,7 +150,7 @@ export default {
   padding: 0.80625rem 2.15rem 2.15rem;
 .article-footer
   padding: 0 2.15rem;
-  border-color: var(--inside-border-color);
+  border-color: var(--theme-border-color);
   .vssue
     padding: 10px 0;
 .article-hr

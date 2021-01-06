@@ -5,7 +5,7 @@
       <span class="icon-up" @click="scrollToTop"></span>
       <span class="icon-down" @click="scrollToBottom"></span>
       <span class="icon-sidebar" @click="handleToggleSideBar" v-if="width < mobileWidth"></span>
-      <span class="icon-toc" v-if="$page.pid === 'post'"></span>
+      <span class="icon-toc" v-if="$page.pid === 'post'" @click="toggleToc"></span>
       <span class="icon-search"></span>
     </div>
     <div class="float-menu" @click="toggleMenu">
@@ -82,6 +82,9 @@ export default {
     toggleMenu() {
       this.isSHow = !this.isSHow;
     },
+    toggleToc() {
+      this.$eventBus.$emit('EV_TOGGLE_TOC')
+    },
     handleToggleSideBar() {
       this.$eventBus.$emit('EV_TOGGLE_SIDE_BAR')
     }
@@ -101,6 +104,9 @@ export default {
       transform rotate(-90deg)
     .float-menu__list > span
       opacity: 1;
+      z-index 0
+      &.icon-search
+        z-index -1
       &:nth-child(3n-2)
         top: 0;
         right: 0;
@@ -169,7 +175,7 @@ export default {
       transform-origin: 50% 50%;
   &__text
     position relative
-    font-family var(--inside-font-label)
+    font-family var(--theme-font-label)
     font-size 1.2rem
     span
       font-size .75rem

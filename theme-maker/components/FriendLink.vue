@@ -61,7 +61,7 @@ export default {
       border-top-left-radius 6px
       border-top-right-radius 6px
     &:not(:last-child)
-      border-bottom dotted 1px var(--inside-border-color)
+      border-bottom dotted 1px var(--theme-border-color)
     &:last-child
       border-bottom-left-radius 6px
       border-bottom-right-radius 6px

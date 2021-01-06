@@ -34,7 +34,7 @@ export default {
     line-height: 2.4;
     transition: background-color .15s;
     display inline-block
-    background-color var(--inside-accent-color-01)
+    background-color var(--theme-accent-color-01)
     &:hover
       background-color $primaryColor
       span

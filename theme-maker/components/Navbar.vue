@@ -35,7 +35,7 @@ export default {
         color $primaryColor
         font-size: 1.168rem;
         & > a:after
-          background-color: var(--inside-accent-color);
+          background-color: var(--theme-accent-color);
           background-image: none;
       > a
         display block
@@ -60,7 +60,7 @@ export default {
           margin-bottom inherit
           border-bottom none
           &:after
-            background-color: var(--inside-accent-color);
+            background-color: var(--theme-accent-color);
             background-image: none;
   .search-box
     display block
