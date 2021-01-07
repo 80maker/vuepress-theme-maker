@@ -70,6 +70,7 @@ export default {
     .suggestions
       text-align left
       left 1rem
+      right 0
       width auto
 @media (min-width: $MQMobile)
   .nav-links a:hover, .nav-links a.router-link-active

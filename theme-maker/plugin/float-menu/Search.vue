@@ -1,0 +1,91 @@
+<template>
+  <div class="theme-search" v-show="isShow">
+    <div class="theme-search__inner">
+      <SearchBox/>
+      <a class="icon-exit" @click="handleExit"></a>
+    </div>
+  </div>
+</template>
+<script>
+import SearchBox from '@SearchBox'
+export default {
+  components: {
+    SearchBox
+  },
+  data() {
+    return {
+      isShow: false
+    }
+  },
+  created() {
+    this.$eventBus.$on('EV_TOGGLE_SEARCH', (flag) => {
+      if (flag === false) {
+        return this.isShow = false;
+      }
+      this.isShow = !this.isShow;
+    })
+  },
+  mounted() {
+    window.addEventListener('keydown', (ev)=>{
+      if (ev.keyCode === 80 && ev.shiftKey && (ev.metaKey || ev.ctrlKey)) {
+        this.isShow = true;
+      }
+    }, false)
+  },
+  methods: {
+    handleExit() {
+      this.isShow = false;
+    }
+  }
+}
+</script>
+<style lang="stylus">
+.theme-search
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  overflow-y: auto;
+  height: 100%;
+  background-color: rgba(0,0,0,.2);
+  &__inner
+    position relative
+    display: flex;
+    align-items center
+    margin: 3rem auto 2rem;
+    background: var(--theme-card-background);
+    border-radius: 6px;
+    padding: .25rem .5rem;
+    > a
+      cursor pointer
+      padding: 1rem;
+      line-height 1.5rem
+      font-size: 1.5rem;
+      opacity: .5;
+      transition: opacity .15s;
+  .search-box
+    display flex
+    flex auto
+    white-space: nowrap;
+    position static
+    input
+      display block
+      flex auto
+      font-size: 1.2rem;
+      border: 0;
+      line-height: 1.4;
+      height 3.7rem
+      background-position 1rem 50%
+      background-size 1.5rem
+      padding-left 3.5rem
+    .suggestions
+      width 100%
+      top 3.5rem
+      margin 0
+      left 0
+      right 0
+      border none
+      border-top solid 1px var(--theme-border-color)
+      border-radius 0 0 6px 6px
+</style>

@@ -98,6 +98,7 @@ export default {
     })
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
+      this.$eventBus.$emit('EV_TOGGLE_SEARCH', false)
     })
   },
   methods: {

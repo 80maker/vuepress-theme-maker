@@ -6,7 +6,7 @@
       <span class="icon-down" @click="scrollToBottom"></span>
       <span class="icon-sidebar" @click="handleToggleSideBar" v-if="width < mobileWidth"></span>
       <span class="icon-toc" v-if="$page.pid === 'post'" @click="toggleToc"></span>
-      <span class="icon-search"></span>
+      <span class="icon-search" @click="toggleSearch"></span>
     </div>
     <div class="float-menu" @click="toggleMenu">
       <svg
@@ -84,6 +84,9 @@ export default {
     },
     toggleToc() {
       this.$eventBus.$emit('EV_TOGGLE_TOC')
+    },
+    toggleSearch() {
+      this.$eventBus.$emit('EV_TOGGLE_SEARCH')
     },
     handleToggleSideBar() {
       this.$eventBus.$emit('EV_TOGGLE_SIDE_BAR')

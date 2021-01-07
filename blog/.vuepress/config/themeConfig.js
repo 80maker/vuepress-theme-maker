@@ -9,5 +9,6 @@ module.exports = {
   ],
   logo: '/logo.jpg',
   wordPerminute: 300,
-  hostname: 'https://80shuo.com'
+  hostname: 'https://80shuo.com',
+  searchPlaceholder: 'Search'
 }
