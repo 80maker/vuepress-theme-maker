@@ -42,7 +42,7 @@ export default {
   bottom 0
   left 0
   border-right 1px solid
-  border-color #e0e0e0
+  border-color var(--theme-border-color)
   &__inner
     margin-right -1rem
     padding-right 1rem
@@ -59,7 +59,7 @@ export default {
   margin: 1rem 1rem 1em;
   border-radius: 6px;
   text-align: center;
-  background #ffffff
+  background var(--theme-card-background)
   display: inline-block;
   &__logo
     display: inline-block;

@@ -36,7 +36,7 @@ export default {
     display inline-block
     background-color var(--theme-accent-color-01)
     &:hover
-      background-color $primaryColor
+      background-color $accentColor
       span
         color #ffffff
   li

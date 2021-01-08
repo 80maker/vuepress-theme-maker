@@ -90,7 +90,7 @@ export default {
 
 <style lang="stylus">
 .post
-  background #ffffff
+  background var(--theme-card-background) 
   border-radius: 6px;
 .article-content
   a

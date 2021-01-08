@@ -32,7 +32,7 @@ export default {
       transition: all .15s;
       cursor pointer
       &:hover
-        color $primaryColor
+        color $accentColor
         font-size: 1.168rem;
         & > a:after
           background-color: var(--theme-accent-color);
@@ -51,7 +51,7 @@ export default {
           background: var(--theme-background);
           border-radius: 50%;
           content: "";
-          box-shadow: 0 0 0 1px #e0e0e0;
+          box-shadow: 0 0 0 1px var(--theme-border-color);
           transform: translate(50%,-50%);
         &:not(.external)
           margin-bottom inherit
@@ -67,6 +67,8 @@ export default {
     text-align right
     position relative
     z-index 1
+    input
+      background-color: var(--theme-card-background);
     .suggestions
       text-align left
       left 1rem
@@ -74,5 +76,5 @@ export default {
       width auto
 @media (min-width: $MQMobile)
   .nav-links a:hover, .nav-links a.router-link-active
-    color $primaryColor
+    color $accentColor
 </style>

@@ -63,8 +63,8 @@ export default {
 .archive
   border-radius 6px
   padding 2.15rem
-  border-color #e0e0e0
-  background #fff
+  border-color var(--theme-border-color)
+  background var(--theme-card-background) 
   &__list
     margin 0
     padding-left 0
@@ -92,7 +92,7 @@ export default {
     font-size 1.78571rem
     position relative
     line-height 2.4em
-    background-color #ffffff
+    background var(--theme-card-background)
   &__sub-item
     display flex
     align-items flex-start
@@ -109,7 +109,7 @@ export default {
   &__month
     position relative
     z-index 0
-    background-color #fff
+    background var(--theme-card-background)
     padding 0 .6em
     margin-top 1rem
     color #fff
@@ -128,7 +128,7 @@ export default {
       content ' '
       opacity .63
       transition opacity .4s
-      background-color $primaryColor
+      background-color var(--theme-accent-color)
   &__leaf-item
     position relative
     display flex

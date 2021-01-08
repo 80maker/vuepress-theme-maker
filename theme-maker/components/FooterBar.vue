@@ -53,5 +53,5 @@ export default {
         transition: color .15s, border-color .15s, opacity .15s;
       & a:hover
         border-bottom-style: solid;
-        border-color: $primaryColor;
+        border-color: $accentColor;
 </style>

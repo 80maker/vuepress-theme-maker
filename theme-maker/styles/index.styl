@@ -4,51 +4,8 @@
   box-sizing border-box
 }
 ::selection
-    background-color: $primaryColor;
+    background-color: var(--theme-accent-color);
     color: #fff;
-html
-  --theme-content-width: 660px;
-  --theme-mobile-width $MQMobile
-  --theme-background #ffffff url('/images/bg.png')
-  --theme-accent-color $primaryColor
-  --theme-accent-color-005: rgba(96, 125, 139, .05);
-  --theme-font-base: 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-  --theme-accent-color-01: rgba(96, 125, 139, .1);
-  --theme-border-color: #e0e0e0;
-  --theme-font-label: Sarpanch, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-  --theme-sidebar-background: $primaryColor linear-gradient(to bottom, $primaryColor 0%, darken($primaryColor, 20%) 100%);
-  --theme-card-background: #fff;
-// html {
-//   --theme-accent-color: #607d8b;
-//   --theme-foreground-color: #363636;
-//   --theme-background: #ffffff url(https://www.toptal.com/designers/subtlepatterns/patterns/brickwall.png);
-//   --theme-font-logo: Lobster, cursive, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-//   --theme-font-menu: IM Fell DW Pica SC, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-//   --theme-font-heading: impact, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-//   --theme-font-code: 'Fira Code', Consolas, monospace;
-//   --theme-font-print: 'PingFang SC', 'Microsoft YaHei';
-//   --theme-highlight-00: #ffffff;
-//   --theme-highlight-01: #e0e0e0;
-//   --theme-highlight-02: #f3f6f7;
-//   --theme-highlight-03: #95a5b3;
-//   --theme-highlight-04: #363636;
-//   --theme-highlight-05: #262b2f;
-//   --theme-highlight-06: #000000;
-//   --theme-highlight-07: #000000;
-//   --theme-highlight-08: #5d6c7b;
-//   --theme-highlight-09: #40464a;
-//   --theme-highlight-0a: #2980b9;
-//   --theme-highlight-0b: #be516e;
-//   --theme-highlight-0c: #237dac;
-//   --theme-highlight-0d: #944770;
-//   --theme-highlight-0e: #239371;
-//   --theme-highlight-0f: #edf0f3;
-//   --theme-card-color: #fff;
-//   --theme-accent-color-005: rgba(96, 125, 139, .05);
-//   --theme-accent-color-02: rgba(96, 125, 139, .2);
-//   --theme-accent-color-04: rgba(96, 125, 139, .4);
-//   --theme-accent-color-08: rgba(96, 125, 139, .8)
-// }
 body, html
   min-height 100vh
   font-size 14px
@@ -56,14 +13,14 @@ body, html
   overflow-x: hidden;
 body
   font-family 'Josefin Sans','PingFang SC','Microsoft YaHei'
-  color $textColor
+  color var(--theme-foreground-color)
   background var(--theme-background)
 a
   color: inherit
   &:link, &:visited
-    color $textColor
+    color var(--theme-foreground-color)
   &:hover, &:active
-    color $primaryColor
+    color $accentColor
 .theme-container
   position relative
 .theme-main
@@ -73,7 +30,7 @@ a
   position: relative;
   display: block;
 .router-link-active
-  color $primaryColor
+  color $accentColor
 .tac
   text-align: center
 .mt-1
@@ -162,7 +119,7 @@ img {
     display: none
   &.page-item
     &.active > a
-      background $primaryColor
+      background $accentColor
       color #ffffff
     > a
       font-family Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei'
@@ -176,7 +133,7 @@ img {
       border none
       background none
       &:hover
-        background $primaryColor
+        background $accentColor
         color #ffffff
   &:first-child > a, &:last-child > a
     width: 2.4rem;
@@ -189,7 +146,7 @@ img {
     background none
     border none
     &:hover
-      background $primaryColor
+      background $accentColor
       color #ffffff
   &:first-child > a:after, &:last-child > a:after
     text-align center

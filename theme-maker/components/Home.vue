@@ -54,7 +54,7 @@ export default {
   overflow: hidden;
   margin-bottom: 1.75rem;
   border-radius: 6px;
-  background #ffffff
+  background var(--theme-card-background)
 .article-title
   margin 0
   a

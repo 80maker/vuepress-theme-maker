@@ -157,7 +157,7 @@ export default {
     a
       display block
       padding: .5em 1em;
-      color $textColor
+      color var(--theme-foreground-color)
       width 100%
       box-sizing border-box
       font-size 12px
@@ -168,12 +168,12 @@ export default {
       text-overflow ellipsis
       white-space nowrap
     &.active
-      border-left-color $accentColor
+      border-left-color var(--theme-accent-color)
       a
-        color $accentColor
+        color var(--theme-accent-color)
     &:hover
       a
-        color $accentColor
+        color var(--theme-accent-color)
   for i in range(3, 6)
     .theme-toc-h{i} a
       padding-left 1rem * (i - 2)

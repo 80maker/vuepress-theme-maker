@@ -29,7 +29,7 @@ export default {
 </script>
 <style lang="stylus">
 .theme-SubNav
-  background: #fff;
+  background: var(--theme-card-background);
   display: flex;
   justify-content: space-around;
   margin: 0 1rem;
@@ -60,7 +60,7 @@ export default {
       background-color: currentColor;
     &--active
       &:link,&:visited,&:active,&:hover
-        color $primaryColor
+        color $accentColor
       &:after
         transform: scaleX(1);
     &:hover:after

@@ -6,7 +6,7 @@
       <span class="icon-down" @click="scrollToBottom"></span>
       <span class="icon-sidebar" @click="handleToggleSideBar" v-if="width < mobileWidth"></span>
       <span class="icon-toc" v-if="$page.pid === 'post'" @click="toggleToc"></span>
-      <span class="icon-search" @click="toggleSearch"></span>
+      <span class="icon-search" @click.stop="toggleSearch"></span>
     </div>
     <div class="float-menu" @click="toggleMenu">
       <svg
@@ -145,7 +145,7 @@ export default {
     width 88%
     height 88%
     border-radius 50%
-    background-color $primaryColor
+    background-color $accentColor
     box-shadow 0 0 8px #ccc
   &__list
     width 4.4rem
@@ -172,7 +172,7 @@ export default {
     width 100%
     height 100%
     circle
-      color $primaryColor
+      color $accentColor
       transition: 0.35s stroke-dashoffset;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;

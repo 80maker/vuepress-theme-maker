@@ -28,7 +28,10 @@ export default {
   mounted() {
     window.addEventListener('keydown', (ev)=>{
       if (ev.keyCode === 80 && ev.shiftKey && (ev.metaKey || ev.ctrlKey)) {
-        this.isShow = true;
+        return this.isShow = true;
+      }
+      if (ev.keyCode === 27) {
+        return this.isShow = false;
       }
     }, false)
   },
@@ -79,6 +82,7 @@ export default {
       background-position 1rem 50%
       background-size 1.5rem
       padding-left 3.5rem
+      background-color: var(--theme-card-background);
     .suggestions
       width 100%
       top 3.5rem
