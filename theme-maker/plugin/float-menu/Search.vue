@@ -82,7 +82,7 @@ export default {
       background-position 1rem 50%
       background-size 1.5rem
       padding-left 3.5rem
-      background-color: var(--theme-card-background);
+      background-color var(--theme-card-background)
     .suggestions
       width 100%
       top 3.5rem
@@ -92,4 +92,8 @@ export default {
       border none
       border-top solid 1px var(--theme-border-color)
       border-radius 0 0 6px 6px
+      background-color var(--theme-card-background)
+      a.focused
+        background-color var(--theme-accent-color-005)
+        color var(--theme-accent-color)
 </style>

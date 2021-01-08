@@ -70,6 +70,7 @@ export default {
     input
       background-color: var(--theme-card-background);
     .suggestions
+      background-color: var(--theme-card-background);
       text-align left
       left 1rem
       right 0

@@ -4,8 +4,8 @@
   box-sizing border-box
 }
 ::selection
-    background-color: var(--theme-accent-color);
-    color: #fff;
+    background-color var(--theme-accent-color)
+    color: #fff
 body, html
   min-height 100vh
   font-size 14px
@@ -186,7 +186,13 @@ img {
 }
 // 滚动条
 ::-webkit-scrollbar
-    width: 8px;
-    height: 6px;
-::-webkit-rollbar-thumscb
-    background-color rgba(96,125,139,.2)
+  width: 8px;
+  height: 6px;
+::-webkit-scrollbar-thumb
+  background-color var(--theme-accent-color-02)
+  border-radius: 3px;
+  &:hover
+    background-color var(--theme-accent-color-04)
+::-webkit-scrollbar-track 
+  background var(--theme-card-background)
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.08);

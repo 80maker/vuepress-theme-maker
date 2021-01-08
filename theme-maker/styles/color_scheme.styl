@@ -26,6 +26,11 @@ html
   --theme-highlight-0d: #944770;
   --theme-highlight-0e: #239371;
   --theme-highlight-0f: #edf0f3;
+  --theme-accent-color-005: alpha($dark_accentColor, .05)
+  --theme-accent-color-01: alpha($dark_accentColor, .1)
+  --theme-accent-color-02: alpha($dark_accentColor, .2)
+  --theme-accent-color-04: alpha($dark_accentColor, .4)
+  --theme-accent-color-08: alpha($dark_accentColor, .8)
 // html {
 //   --theme-accent-color: #607d8b;
 //   --theme-foreground-color: #363636;
@@ -36,10 +41,6 @@ html
 //   --theme-font-code: 'Fira Code', Consolas, monospace;
 //   --theme-font-print: 'PingFang SC', 'Microsoft YaHei';
 //   --theme-card-color: #fff;
-//   --theme-accent-color-005: rgba(96, 125, 139, .05);
-//   --theme-accent-color-02: rgba(96, 125, 139, .2);
-//   --theme-accent-color-04: rgba(96, 125, 139, .4);
-//   --theme-accent-color-08: rgba(96, 125, 139, .8)
 // }
 @media (prefers-color-scheme: dark)
    html
@@ -74,7 +75,7 @@ html
     --theme-highlight-0e: #ba8baf;
     --theme-highlight-0f: #a16946;
     --theme-card-color: #252525;
-    --theme-accent-color-005: $codeBgColor 
+    --theme-accent-color-005: alpha($dark_accentColor, .05)
     --theme-accent-color-01: alpha($dark_accentColor, .1)
     --theme-accent-color-02: alpha($dark_accentColor, .2)
     --theme-accent-color-04: alpha($dark_accentColor, .4)
