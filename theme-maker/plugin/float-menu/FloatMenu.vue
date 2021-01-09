@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted() {
-    this.mobileWidth = parseInt(getCssVar('--theme-mobile-width').trim());
+    this.mobileWidth = parseInt(getCssVar('--theme-mobile-width'));
     this.width = window.innerWidth;
     window.addEventListener('resize', () => {
       this.width = window.innerWidth;
@@ -95,6 +95,8 @@ export default {
 }
 </script>
 <style lang="stylus">
+:root
+  --theme-mobile-width $MQMobile
 .float-menu-wrap
   position: fixed;
   right: 1rem;
