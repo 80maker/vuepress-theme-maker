@@ -101,7 +101,7 @@ export default {
   position: fixed;
   right: 1rem;
   bottom: 1.3rem;
-  z-index: 1;
+  z-index: 9;
   color: #fff;
   text-align: center;
   &--open

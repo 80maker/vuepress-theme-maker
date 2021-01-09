@@ -124,6 +124,7 @@ export default {
 .table-of-contents
   display none !important
 .theme-toc
+  opacity .9
   text-align left
   transition-duration: 378ms;
   transform: translateX(100%);
