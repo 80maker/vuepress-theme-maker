@@ -32,7 +32,7 @@ export default {
       transition: all .15s;
       cursor pointer
       &:hover
-        color $accentColor
+        color var(--theme-accent-color)
         font-size: 1.168rem;
         & > a:after
           background-color: var(--theme-accent-color);
@@ -77,5 +77,5 @@ export default {
       width auto
 @media (min-width: $MQMobile)
   .nav-links a:hover, .nav-links a.router-link-active
-    color $accentColor
+    color var(--theme-accent-color)
 </style>

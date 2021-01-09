@@ -147,7 +147,7 @@ export default {
     width 88%
     height 88%
     border-radius 50%
-    background-color $accentColor
+    background-color var(--theme-accent-color)
     box-shadow 0 0 8px #ccc
   &__list
     width 4.4rem
@@ -174,7 +174,7 @@ export default {
     width 100%
     height 100%
     circle
-      color $accentColor
+      color var(--theme-accent-color)
       transition: 0.35s stroke-dashoffset;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;

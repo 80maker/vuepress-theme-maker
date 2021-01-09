@@ -21,7 +21,7 @@ a
   &:link, &:visited
     color var(--theme-foreground-color)
   &:hover, &:active
-    color $accentColor
+    color var(--theme-accent-color)
 .theme-container
   position relative
 .theme-main
@@ -31,7 +31,7 @@ a
   position: relative;
   display: block;
 .router-link-active
-  color $accentColor
+  color var(--theme-accent-color)
 .tac
   text-align: center
 .mt-1
@@ -120,7 +120,7 @@ img {
     display: none
   &.page-item
     &.active > a
-      background $accentColor
+      background var(--theme-accent-color)
       color #ffffff
     > a
       font-family Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei'
@@ -134,7 +134,7 @@ img {
       border none
       background none
       &:hover
-        background $accentColor
+        background var(--theme-accent-color)
         color #ffffff
   &:first-child > a, &:last-child > a
     width: 2.4rem;
@@ -147,7 +147,7 @@ img {
     background none
     border none
     &:hover
-      background $accentColor
+      background var(--theme-accent-color)
       color #ffffff
   &:first-child > a:after, &:last-child > a:after
     text-align center

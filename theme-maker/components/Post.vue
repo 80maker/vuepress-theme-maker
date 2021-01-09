@@ -100,7 +100,7 @@ export default {
   font-size 16px
   letter-spacing 0px
   font-family PT Serif, Serif
-  color $textColor
+  color var(--theme-foreground-color)
   position relative
  .post-title
     padding-top 0 

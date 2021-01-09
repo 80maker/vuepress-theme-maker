@@ -60,7 +60,7 @@ export default {
       background-color: currentColor;
     &--active
       &:link,&:visited,&:active,&:hover
-        color $accentColor
+        color var(--theme-accent-color)
       &:after
         transform: scaleX(1);
     &:hover:after
@@ -73,6 +73,25 @@ export default {
     margin-bottom: .75rem;
     font-size: 1.4rem;
   &__name
+    margin: 0 .5rem;
     font-size: .95rem;
     opacity: .63;
+@media (max-width: $MQMobile)
+  .theme-SubNav__item
+    position relative
+    &:after
+      left: -.2rem;
+      right: -.2rem;
+      top: .5rem;
+      bottom: .5rem;
+      width: auto;
+      height: auto;
+      border-radius: 6px;
+      background-color: hsla(0,0%,100%,.1)!important;
+    &:hover :after
+      position: absolute;
+      content: "";
+      transition: transform .4s;
+      transform-origin: bottom center;
+    
 </style>

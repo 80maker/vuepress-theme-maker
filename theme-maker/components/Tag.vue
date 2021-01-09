@@ -30,7 +30,7 @@ export default {
     transition: background-color .15s;
     margin: 0 1rem 1rem 0;
     &:hover
-      background $accentColor
+      background var(--theme-accent-color)
       color #ffffff
   
 </style>
