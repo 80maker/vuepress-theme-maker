@@ -93,5 +93,7 @@ export default {
       content: "";
       transition: transform .4s;
       transform-origin: bottom center;
+    &:link,&:visited,&:active,&:hover
+      color #fff
     
 </style>

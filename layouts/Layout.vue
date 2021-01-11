@@ -29,7 +29,7 @@ import TagItem from '@theme/components/TagItem.vue'
 import Post from '@theme/components/Post.vue'
 import FriendLink from '@theme/components/FriendLink.vue'
 import SideBar from '@theme/components/SideBar.vue'
-import { resolveSidebarItems } from '@parent-theme/util'
+import { resolveSidebarItems } from '@theme/util'
 export default {
   name: 'Layout',
   components: {

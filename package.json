@@ -1,22 +1,24 @@
 {
-  "name": "80shuo.com",
-  "version": "1.0.0",
-  "description": "",
+  "name": "vuepress-theme-maker",
+  "version": "0.1.0",
+  "description": "A flat and clean Blog Theme for VuePress",
+  "repository": {
+    "type": "git",
+    "url": "80maker/vuepress-theme-maker"
+  },
   "main": "index.js",
   "scripts": {
     "blog:dev": "vuepress dev blog",
     "blog:build": "vuepress build blog",
     "deploy": "sh deploy.sh"
   },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.7.1",
-    "@vuepress/plugin-blog": "^1.9.3",
-    "@vuepress/plugin-medium-zoom": "^1.7.1",
-    "vuepress": "^1.7.1"
-  },
+  "author": "80maker<cmgddd@126.com>",
+  "license": "MIT",
   "dependencies": {
-    "lodash.debounce": "^4.0.8"
+    "vuepress": "^1.7.1",
+    "@vuepress/plugin-blog": "^1.9.3"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }

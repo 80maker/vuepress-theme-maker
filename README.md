@@ -4,7 +4,7 @@ A flat and clean Blog powered by VuePress and vuepress-theme-maker. inspired by 
 
 ## Preview
 
-![预览](https://80shuo.com/images/screenshot.webp)
+![预览](https://raw.githubusercontent.com/80maker/vuepress-theme-maker/main/blog/.vuepress/public/images/screenshot.webp)
 
 ## Features
 
@@ -18,11 +18,23 @@ A flat and clean Blog powered by VuePress and vuepress-theme-maker. inspired by 
 - 暗黑模式
 - 响应式主题
 
+## Install
+
+```
+npm i vuepress-theme-maker -D
+# OR yarn add @vuepress/theme-blog -D
+```
+
 ## Usage
 
 ```
-npm install
-npm run blog:dev
+// .vuepress/config.js
+module.exports = {
+  theme: 'vuepress-theme-maker',
+  themeConfig: {
+    // Please head documentation to see the available options.
+  }
+}
 ```
 
 ## Deploy to Github Pages

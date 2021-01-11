@@ -1,4 +1,34 @@
 module.exports = [
+  ['@vuepress/nprogress'],
+  ['@vuepress/search', {
+    searchMaxSuggestions: 10
+  }],
+  ['vuepress-plugin-container', {
+    type: 'tip',
+    defaultTitle: {
+      '/': 'TIP',
+      '/zh/': '提示'
+    }
+  }],
+  ['vuepress-plugin-container', {
+    type: 'warning',
+    defaultTitle: {
+      '/': 'WARNING',
+      '/zh/': '注意'
+    }
+  }],
+  ['vuepress-plugin-container', {
+    type: 'danger',
+    defaultTitle: {
+      '/': 'WARNING',
+      '/zh/': '警告'
+    }
+  }],
+  ['vuepress-plugin-container', {
+    type: 'details',
+    before: info => `<details class="custom-block details">${info ? `<summary>${info}</summary>` : ''}\n`,
+    after: () => '</details>\n'
+  }],
   ['@vuepress/medium-zoom', {
     selector: '.article-content img',
     // medium-zoom options here
@@ -57,6 +87,6 @@ module.exports = [
       clientSecret: '7ad0e3d1455a2d6425c813b37a0526e9bd820657',
     }
   }],
-  require('../../../theme-maker/plugin/theme-utils'),
-  require('../../../theme-maker/plugin/float-menu')
+  require('../../../plugin/theme-utils'),
+  require('../../../plugin/float-menu')
 ]

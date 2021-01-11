@@ -26,7 +26,7 @@
   </div>
 </template>
 <script>
-import { Comment } from '@vuepress/plugin-blog/lib/client/components'
+import Comment from '@vuepress/plugin-blog/lib/client/components/Comment.vue'
 export default {
   name: 'FriendLink',
   components: {

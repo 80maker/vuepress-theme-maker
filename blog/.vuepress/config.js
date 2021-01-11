@@ -6,7 +6,7 @@ module.exports = {
     lineNumbers: true,
     extractHeaders: [ 'h2', 'h3', 'h4' ]
   },
-  theme: require.resolve('../../theme-maker'), // 使用本地主题
+  theme: require.resolve('../../index'), // 使用本地主题
   themeConfig: require('./config/themeConfig'),
   plugins: require('./config/plugins')
 }

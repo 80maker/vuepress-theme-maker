@@ -135,7 +135,7 @@ export default {
     padding .5rem 0
     padding-left 1.5rem
     line-height 2rem
-    align-items center
+    align-items flex-start 
     &:after
       position absolute
       content '-'

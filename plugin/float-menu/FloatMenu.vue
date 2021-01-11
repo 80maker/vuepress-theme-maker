@@ -30,7 +30,6 @@
 </template>
 <script>
 import Toc from '@theme/components/Toc.vue'
-import debounce from 'lodash.debounce'
 import { getCssVar } from '@theme/util'
 export default {
   name: 'FloatMenu',
