@@ -46,7 +46,8 @@ module.exports = themeConfig => {
       // medium-zoom options here
       // See: https://github.com/francoischalifour/medium-zoom#options
       options: {
-        margin: 16
+        margin: 16,
+        background: "#FF0000",
       }
     }],
     ['@vuepress/blog', {

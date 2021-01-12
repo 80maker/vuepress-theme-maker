@@ -23,7 +23,8 @@
   "license": "MIT",
   "dependencies": {
     "vuepress": "^1.7.1",
-    "@vuepress/plugin-blog": "^1.9.3"
+    "@vuepress/plugin-blog": "^1.9.3",
+    "@vuepress/plugin-medium-zoom": "^1.8.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
