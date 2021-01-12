@@ -1,6 +1,6 @@
-# 1980's Maker
+# vuepress-theme-maker
 
-A flat and clean Blog powered by VuePress and vuepress-theme-maker. inspired by [Hexo-theme-inside](https://github.com/ikeq/hexo-theme-inside)
+A flat and clean Blog Theme for VuePress site. inspired by [Hexo-theme-inside](https://github.com/ikeq/hexo-theme-inside)
 
 ## Preview
 
@@ -9,7 +9,7 @@ A flat and clean Blog powered by VuePress and vuepress-theme-maker. inspired by 
 ## Features
 
 - Build with Vue.js
-- 继承至VuePress默认主题,保留了内置搜索,tag分类等绝大多数特性
+- 在VuePress默认主题基础之上修改,保留了内置搜索,tag分类等绝大多数特性
 - 基于官方博客插件`@vuepress/plugin-blog`制作
 - 支持文章评论
 - 内置友情链接页
