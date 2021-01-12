@@ -1,7 +1,14 @@
 {
   "name": "vuepress-theme-maker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A flat and clean Blog Theme for VuePress",
+  "keywords": [
+    "vuepress-theme-blog",
+    "vuepress-theme",
+    "blog-theme",
+    "vue",
+    "vuepress"
+  ],
   "repository": {
     "type": "git",
     "url": "80maker/vuepress-theme-maker"
