@@ -1,4 +1,39 @@
 {$contentClass}
+  blockquote
+    background: #f9f9f9;
+    border-left: 3px solid #ccc;
+    border-radius 3px
+    margin: 1.5em 0;
+    padding: .5em 10px 1em;
+    quotes: "\201C""\201D""\2018""\2019";
+    &:before
+      color: #ccc;
+      content: open-quote;
+      font-size: 4em;
+      line-height: .1em;
+      margin-right: .25em;
+      vertical-align: -.4em;
+  table
+    max-width: 100%;
+    display: block;
+    border-collapse collapse
+    margin: 1rem 0;
+    overflow-x: auto
+
+
+  tr 
+    border-top: 1px solid #dfe2e5
+
+
+  tr:nth-child(2n)
+    background-color: var(--theme-bg-tertiary-color)
+
+  th
+    white-space: nowrap;
+    font-weight: 700;
+  td,th
+    border: 1px solid #dfe2e5;
+    padding: .6em 1em
   code
     color lighten($textColor, 20%)
     padding 0.25rem 0.5rem

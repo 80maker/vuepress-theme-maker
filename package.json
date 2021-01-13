@@ -22,9 +22,13 @@
   "author": "80maker<cmgddd@126.com>",
   "license": "MIT",
   "dependencies": {
-    "vuepress": "^1.7.1",
     "@vuepress/plugin-blog": "^1.9.3",
-    "@vuepress/plugin-medium-zoom": "^1.8.0"
+    "@vuepress/plugin-medium-zoom": "^1.8.0",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-footnote": "^3.0.2",
+    "markdown-it-mark": "^3.0.1",
+    "markdown-it-task-lists": "^2.1.1",
+    "vuepress": "^1.7.1"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

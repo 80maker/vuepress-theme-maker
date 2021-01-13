@@ -133,9 +133,10 @@ export default {
   position fixed
   visibility hidden
   height 100vh
-  max-width 220px
+  max-width 252px
   overflow-y auto
   padding 1rem 0
+  padding-left 1px
   width 252px
   top 0
   right 0
@@ -149,7 +150,7 @@ export default {
   .theme-toc-item
     position relative
     line-height: 1.4;
-    border-left 2px solid rgba(0, 0, 0, 0.08)
+    border-left 2px solid transparent
     overflow hidden
     &.theme-toc-h3 a
       padding-left 2.5em
@@ -161,7 +162,7 @@ export default {
       color var(--theme-foreground-color)
       width 100%
       box-sizing border-box
-      font-size 12px
+      font-size 14px
       font-weight 400
       text-decoration none
       transition color 0.3s

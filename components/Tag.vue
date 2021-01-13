@@ -1,5 +1,5 @@
 <template>
-  <div class="theme-main__inner tag">
+  <div class="theme-main__inner theme-tag">
     <div class="tag__list">
       <h1 class="tag__title">{{$tag.list.length}} tags in total</h1>
       <router-link class="tag__link" v-for="tag in $tag.list" :key="tag.name" :to="tag.path"># {{ tag.name }}</router-link>
@@ -12,7 +12,7 @@ export default {
 }
 </script>
 <style lang="stylus">
-.tag
+.theme-tag
   background var(--theme-card-background)
   border-radius: 6px;
   padding: 2.15rem;

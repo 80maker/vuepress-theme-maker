@@ -8,6 +8,10 @@ module.exports = themeConfig => {
     nav: [
       { text: '🏠 Home', link: '/' }
     ],
+    markdown: {
+      lineNumbers: true,
+      extractHeaders: [ 'h2', 'h3', 'h4' ]
+    },
   }, themeConfig)
 
   const plugins = [

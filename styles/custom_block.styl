@@ -4,35 +4,36 @@
     margin-bottom -0.4rem
   &.tip, &.warning, &.danger
     padding .1rem 1.5rem
-    border-left-width .5rem
+    border-left-width 3px 
     border-left-style solid
     margin 1rem 0
+    border-radius: 3px;
+    word-break: break-word;
+    line-height: 1.8;
+    background-color var(--theme-accent-color-005);
   &.tip
-    background-color #f3f5f7
-    border-color #42b983
+    border-color var(--theme-accent-color)
   &.warning
-    background-color rgba(255,229,100,.3)
     border-color darken(#ffe564, 35%)
-    color darken(#ffe564, 70%)
+    color var(--theme-foreground-color)
     .custom-block-title
       color darken(#ffe564, 50%)
     a
-      color $textColor
+      color var(--theme-foreground-color)
   &.danger
-    background-color #ffe6e6
     border-color darken(red, 20%)
-    color darken(red, 70%)
+    color var(--theme-foreground-color)
     .custom-block-title
       color darken(red, 40%)
     a
-      color $textColor
+      color var(--theme-foreground-color)
   &.details
     display block
     position relative
     border-radius 2px
     margin 1.6em 0
     padding 1.6em
-    background-color #eee
+    background-color var(--theme-accent-color-005)
     h4
       margin-top 0
     figure, p

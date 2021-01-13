@@ -161,6 +161,11 @@ export default {
   opacity: .5;
   animation: .4s both;
   animation-name: line-scale;
+.footnote-ref a
+  &:link, &:visited
+    color var(--theme-accent-color)!important
+abbr
+  cursor help
 @media (max-width: $MQMobile)
   .vuepress-blog-theme-content
     padding-top 0
