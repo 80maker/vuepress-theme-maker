@@ -11,6 +11,7 @@ A flat and clean Blog Theme for VuePress site. inspired by [Hexo-theme-inside](h
 - Build with Vue.js
 - 在VuePress默认主题基础之上修改,保留了内置搜索,tag分类等绝大多数特性
 - 基于官方博客插件`@vuepress/plugin-blog`制作
+- 扩展了Markdown语法,支持`footnote` `mark` `abbr` `task-lists`
 - 支持文章评论
 - 内置友情链接页
 - 文章阅读时长估算
@@ -22,7 +23,7 @@ A flat and clean Blog Theme for VuePress site. inspired by [Hexo-theme-inside](h
 
 ```
 npm i vuepress-theme-maker -D
-# OR yarn add @vuepress/theme-blog -D
+# OR yarn add @vuepress/theme-theme-maker -D
 ```
 
 ## Usage

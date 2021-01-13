@@ -19,9 +19,9 @@ tags:
 
 ## 创建VuePress主题所需的工具和准备工作
 
-> * [Node.js](https://nodejs.org/en/)>= 8.6
-> * [Github Pages](https://pages.github.com/) 其它部署平台可参考 [官方部署文档](https://vuepress.vuejs.org/zh/guide/deploy.html)
-> * 顺手的文本编辑器. e.g [VSCode](https://code.visualstudio.com/)
+* [Node.js](https://nodejs.org/en/)>= 8.6
+* [Github Pages](https://pages.github.com/) 其它部署平台可参考 [官方部署文档](https://vuepress.vuejs.org/zh/guide/deploy.html)
+* 顺手的文本编辑器. e.g [VSCode](https://code.visualstudio.com/)
 
 ## 主题源码下载
 - 完整的主题源码都放在GitHub上了,可以随时Clone下来做为参照.

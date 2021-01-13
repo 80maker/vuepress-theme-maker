@@ -92,6 +92,8 @@ export default {
 .post
   background var(--theme-card-background) 
   border-radius: 6px;
+  line-height 1.8
+  color var(--theme-foreground-color)
 .article-content
   a
     border-bottom: 1px dotted;

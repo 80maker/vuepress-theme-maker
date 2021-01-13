@@ -427,7 +427,7 @@ module.exports = {
 **输入**
 
 ```
-<<< @/../@vuepress/markdown/__tests__/fragments/snippet.js{2}
+<<< @/blog/.vuepress/__tests__/snippet.js{2}
 ```
 
 **输出**
@@ -448,7 +448,7 @@ module.exports = {
 **输入**
 
 ``` md
-<<< @/../@vuepress/markdown/__tests__/fragments/snippet-with-region.js#snippet{1}
+<<< @/blog/.vuepress/__tests__/snippet-with-region.js#snippet{1}
 ```
 
 **代码文件**
