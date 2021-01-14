@@ -3,11 +3,11 @@
     <Toc/>
     <div class="float-menu__list">
       <span class="icon-up" @click="scrollToTop"></span>
-      <span class="icon-down" @click="scrollToBottom"></span>
+      <DarkMode/>
       <span class="icon-sidebar" @click="handleToggleSideBar" v-if="width < mobileWidth"></span>
       <span class="icon-toc" v-if="$page.pid === 'post'" @click="toggleToc"></span>
       <span class="icon-search" @click.stop="toggleSearch"></span>
-      <DarkMode/>
+      
     </div>
     <div class="float-menu" @click="toggleMenu">
       <svg
@@ -78,9 +78,6 @@ export default {
     scrollToTop () {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     },
-    scrollToBottom () {
-      window.scrollTo({ top: document.documentElement.clientHeight + window.innerHeight, behavior: 'smooth' })
-    },
     toggleMenu() {
       this.isSHow = !this.isSHow;
     },
@@ -133,8 +130,6 @@ export default {
         transform: translate3d(0,-280%,0);
       &:nth-child(5)
         transform: translate3d(-107.15136%,-258.68627%,0);
-      &:nth-child(6)
-        transform: translate3d(-222.15136%,-174.68627%,0);
 .float-menu
   position relative
   -webkit-tap-highlight-color rgba(0,0,0,0)
