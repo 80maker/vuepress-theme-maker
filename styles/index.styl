@@ -67,18 +67,6 @@ h1,h2,h3,h4,h5,h6
   padding-bottom 0
   border-bottom none
   line-height 1.5
-  {$contentClass}:not(.custom) > &
-    margin-top (0.5rem - $navbarHeight)
-    padding-top ($navbarHeight + 1rem)
-    margin-bottom 0
-
-    &:first-child
-      margin-top -1.5rem
-      margin-bottom 1rem
-
-      + p, + pre, + .custom-block
-        margin-top 2rem
-
   &:focus .header-anchor,
   &:hover .header-anchor
     opacity: 1

@@ -7,6 +7,7 @@
       <span class="icon-sidebar" @click="handleToggleSideBar" v-if="width < mobileWidth"></span>
       <span class="icon-toc" v-if="$page.pid === 'post'" @click="toggleToc"></span>
       <span class="icon-search" @click.stop="toggleSearch"></span>
+      <DarkMode/>
     </div>
     <div class="float-menu" @click="toggleMenu">
       <svg
@@ -30,11 +31,13 @@
 </template>
 <script>
 import Toc from '@theme/components/Toc.vue'
+import DarkMode from '@theme/components/DarkMode.vue'
 import { getCssVar } from '@theme/util'
 export default {
   name: 'FloatMenu',
   components: {
-    Toc
+    Toc,
+    DarkMode
   },
   data() {
     return {
@@ -130,6 +133,8 @@ export default {
         transform: translate3d(0,-280%,0);
       &:nth-child(5)
         transform: translate3d(-107.15136%,-258.68627%,0);
+      &:nth-child(6)
+        transform: translate3d(-222.15136%,-174.68627%,0);
 .float-menu
   position relative
   -webkit-tap-highlight-color rgba(0,0,0,0)

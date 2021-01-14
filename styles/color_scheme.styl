@@ -1,4 +1,4 @@
-html
+$lightMode = 
   --theme-content-width: 660px;
   --theme-background #ffffff url('../assets/images/bg.png')
   --theme-accent-color $accentColor
@@ -32,55 +32,59 @@ html
   --theme-accent-color-02: alpha($dark_accentColor, .2)
   --theme-accent-color-04: alpha($dark_accentColor, .4)
   --theme-accent-color-08: alpha($dark_accentColor, .8)
-// html {
-//   --theme-accent-color: #607d8b;
-//   --theme-foreground-color: #363636;
-//   --theme-background: #ffffff url(https://www.toptal.com/designers/subtlepatterns/patterns/brickwall.png);
-//   --theme-font-logo: Lobster, cursive, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-//   --theme-font-menu: IM Fell DW Pica SC, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-//   --theme-font-heading: impact, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-//   --theme-font-code: 'Fira Code', Consolas, monospace;
-//   --theme-font-print: 'PingFang SC', 'Microsoft YaHei';
-//   --theme-card-color: #fff;
-// }
+
+$darkMode =
+  --theme-content-width: 660px;
+  --theme-accent-color: $dark_accentColor;
+  --theme-foreground-color: $dark_textColor;
+  --theme-border-color: #444;
+  --theme-background: #202020;
+  --theme-sidebar-background: #262626;
+  --theme-card-background: $dark_cardBackgroundColor;
+  --theme-font-base: 'Josefin Sans','PingFang SC','Microsoft YaHei';
+  --theme-font-logo: Lobster,cursive,'Josefin Sans','PingFang SC','Microsoft YaHei';
+  --theme-font-menu: IM Fell DW Pica SC,'Josefin Sans','PingFang SC','Microsoft YaHei';
+  --theme-font-heading: impact,'Josefin Sans','PingFang SC','Microsoft YaHei';
+  --theme-font-label: Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei';
+  --theme-font-code: 'Fira Code',Consolas,monospace;
+  --theme-font-print: 'PingFang SC','Microsoft YaHei';
+  --theme-highlight-00: #252525;
+  --theme-highlight-01: #252525;
+  --theme-highlight-02: #939393;
+  --theme-highlight-03: #585858;
+  --theme-highlight-04: #b8b8b8;
+  --theme-highlight-05: #d8d8d8;
+  --theme-highlight-06: #e8e8e8;
+  --theme-highlight-07: #f8f8f8;
+  --theme-highlight-08: #ab4642;
+  --theme-highlight-09: #dc9656;
+  --theme-highlight-0a: #f7ca88;
+  --theme-highlight-0b: #a1b56c;
+  --theme-highlight-0c: #b8b8b8;
+  --theme-highlight-0d: #7cafc2;
+  --theme-highlight-0e: #ba8baf;
+  --theme-highlight-0f: #a16946;
+  --theme-card-color: #252525;
+  --theme-bg-tertiary-color #161b22
+  --theme-accent-color-005: alpha($dark_accentColor, .05)
+  --theme-accent-color-01: alpha($dark_accentColor, .1)
+  --theme-accent-color-02: alpha($dark_accentColor, .2)
+  --theme-accent-color-04: alpha($dark_accentColor, .4)
+  --theme-accent-color-08: alpha($dark_accentColor, .8)
+
+html
+  {$lightMode}
+
 @media (prefers-color-scheme: dark)
-   html
-    --theme-content-width: 660px;
-    --theme-accent-color: $dark_accentColor;
-    --theme-foreground-color: $dark_textColor;
-    --theme-border-color: #444;
-    --theme-background: #202020;
-    --theme-sidebar-background: #262626;
-    --theme-card-background: $dark_cardBackgroundColor;
-    --theme-font-base: 'Josefin Sans','PingFang SC','Microsoft YaHei';
-    --theme-font-logo: Lobster,cursive,'Josefin Sans','PingFang SC','Microsoft YaHei';
-    --theme-font-menu: IM Fell DW Pica SC,'Josefin Sans','PingFang SC','Microsoft YaHei';
-    --theme-font-heading: impact,'Josefin Sans','PingFang SC','Microsoft YaHei';
-    --theme-font-label: Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei';
-    --theme-font-code: 'Fira Code',Consolas,monospace;
-    --theme-font-print: 'PingFang SC','Microsoft YaHei';
-    --theme-highlight-00: #252525;
-    --theme-highlight-01: #252525;
-    --theme-highlight-02: #939393;
-    --theme-highlight-03: #585858;
-    --theme-highlight-04: #b8b8b8;
-    --theme-highlight-05: #d8d8d8;
-    --theme-highlight-06: #e8e8e8;
-    --theme-highlight-07: #f8f8f8;
-    --theme-highlight-08: #ab4642;
-    --theme-highlight-09: #dc9656;
-    --theme-highlight-0a: #f7ca88;
-    --theme-highlight-0b: #a1b56c;
-    --theme-highlight-0c: #b8b8b8;
-    --theme-highlight-0d: #7cafc2;
-    --theme-highlight-0e: #ba8baf;
-    --theme-highlight-0f: #a16946;
-    --theme-card-color: #252525;
-    --theme-bg-tertiary-color #161b22
-    --theme-accent-color-005: alpha($dark_accentColor, .05)
-    --theme-accent-color-01: alpha($dark_accentColor, .1)
-    --theme-accent-color-02: alpha($dark_accentColor, .2)
-    --theme-accent-color-04: alpha($dark_accentColor, .4)
-    --theme-accent-color-08: alpha($dark_accentColor, .8)
+  html
+    {$darkMode}
+  .float-menu:before
+    box-shadow none
+
+html.light
+  {$lightMode}
+  
+html.dark
+  {$darkMode}
   .float-menu:before
     box-shadow none
