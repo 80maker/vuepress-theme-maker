@@ -1,8 +1,8 @@
 <template>
   <span class="theme-mode-setting" @click="handleToggleMode" :title="title">
-    <Icon icon="auto" v-if="status === 0"/>
-    <Icon icon="moon" v-else-if="status === 1"/>
-    <Icon icon="sun" v-else/>
+    <Icon icon="auto" v-if="status === 0" :key="status"/>
+    <Icon icon="moon" v-else-if="status === 1" :key="status" />
+    <Icon icon="sun" v-else :key="status"/>
   </span>
 </template>
 <script>
