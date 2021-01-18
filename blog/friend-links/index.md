@@ -1,6 +1,6 @@
 ---
 title: It is always a pleasure to greet a friend from afar ~
-cover: ../assets/images/friend.jpg
+cover: /images/friend.jpg
 links: 
   - title: Ikeq Cheng
     roundness: true

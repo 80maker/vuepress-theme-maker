@@ -1,8 +1,6 @@
 module.exports = [
   ['@vuepress/nprogress'],
-  ['@vuepress/search', {
-    searchMaxSuggestions: 10
-  }],
+  ['@vuepress/search'],
   ['vuepress-plugin-container', {
     type: 'tip',
     defaultTitle: {

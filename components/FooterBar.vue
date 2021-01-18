@@ -1,23 +1,21 @@
 <template>
   <div class="theme-footer">
     <div class="social-links">
-      <a target="_blank" rel="external nofollow noopener" class="icon-email"
-        title="email" href="mailto:cmgddd@163.com">email</a>
-       <a target="_blank" rel="external nofollow noopener"
-        class="icon-github" title="github" href="https://github.com/80maker">github</a>
-        <a target="_blank" rel="external nofollow noopener"
-        class="icon-qq"
-        title="qq"
-        href="//qm.qq.com/cgi-bin/qm/qr?k=fknyQ434nkzVUWUmJ6rpIPctkS9eyQaZ&jump_from=webapi">qq</a>
-        <a rel="external nofollow noopener"
-        class="icon-feed" title="feed" href="/rss.xml">feed</a>
+      <template v-for="item in $themeConfig.social">
+        <a v-if="item.type === 'email'" :key="item.type" target="_blank" rel="external nofollow noopener" :class="`icon-${item.type}`"
+        :title="`${item.type}`" :href="`mailto:${item.link}`">{{item.type}}</a>
+        <a v-else-if="item.type === 'github'" :key="item.type" target="_blank" rel="external nofollow noopener" :class="`icon-${item.type}`"
+        :title="`${item.type}`" :href="`https://github.com/${item.link}`">{{item.type}}</a>
+        <a v-else :key="item.type" target="_blank" rel="external nofollow noopener" :class="`icon-${item.type}`"
+        :title="`${item.type}`" :href="`${item.link}`">{{item.type}}</a>
+      </template>
     </div>
-    <p class="copyright">© 2020 ❤️ <a target="_blank" href="https://17ria.com">Neil Chen</a></p>
+    <p class="copyright" v-html="$themeConfig.copyright"></p>
     <p class="powered">
       <span class="">Powered by <a href="https://vuepress.vuejs.org" target="_blank"
           rel="external nofollow noopener">VuePress</a></span>
-      <span class="φde"> Inspired - <a href="https://github.com/ikeq/hexo-theme-inside" target="_blank"
-          rel="external nofollow noopener">Inside</a></span>
+      <span class="φde"> Theme - <a href="https://github.com/80maker/vuepress-theme" target="_blank"
+          rel="external nofollow noopener">Maker</a></span>
     </p>
   </div>
 </template>
