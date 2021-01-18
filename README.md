@@ -23,7 +23,7 @@ A flat and clean Blog Theme for VuePress site. inspired by [Hexo-theme-inside](h
 
 ```
 npm i vuepress-theme-maker -D
-# OR yarn add @vuepress/theme-theme-maker -D
+# OR yarn add vuepress-theme-maker -D
 ```
 
 ## Usage
@@ -37,6 +37,10 @@ module.exports = {
   }
 }
 ```
+
+## Demo
+
+[80shuo.com](https://github.com/80maker/80shuo)
 
 ## Deploy to Github Pages
 

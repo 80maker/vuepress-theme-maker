@@ -3,22 +3,21 @@ module.exports = themeConfig => {
   /**
    * Default theme configuration
    */
-  themeConfig = Object.assign({}, {
-    searchPlaceholder: 'Search',
-    nav: [
+  themeConfig = Object.assign(themeConfig, {
+    searchPlaceholder: themeConfig.searchPlaceholder || 'Search',
+    nav: themeConfig.nav || [
       { text: '🏠 Home', link: '/' }
     ],
-    markdown: {
+    markdown: themeConfig.markdown || {
       lineNumbers: true,
       extractHeaders: [ 'h2', 'h3', 'h4' ]
     },
-  }, themeConfig)
+    social: themeConfig.social || []
+  })
 
   const plugins = [
     ['@vuepress/nprogress'],
-    ['@vuepress/search', {
-      searchMaxSuggestions: 10
-    }],
+    ['@vuepress/search'],
     ['vuepress-plugin-container', {
       type: 'tip',
       defaultTitle: {
