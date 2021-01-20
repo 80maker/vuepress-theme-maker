@@ -17,7 +17,6 @@ export default {
   border-radius: 6px;
   padding: 2.15rem;
   &__title
-    font-family: impact,'Josefin Sans','PingFang SC','Microsoft YaHei';
     margin 0 0 1.5rem 0
     font-size: 1.78571rem;
     font-weight normal

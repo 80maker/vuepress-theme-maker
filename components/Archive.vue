@@ -116,7 +116,6 @@ export default {
     text-transform uppercase
     font-weight 600
     line-height 2
-    font-family Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei'
     &:after
       position absolute
       z-index -1
@@ -148,7 +147,6 @@ export default {
     font-size .85rem
     opacity .63
     padding-right .5rem
-    font-family Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei'
   &__title
     font-size 1.15rem
 </style>

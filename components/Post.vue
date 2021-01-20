@@ -98,14 +98,6 @@ export default {
   a
     border-bottom: 1px dotted;
     transition: color .15s,border-color .15s,opacity .15s;
-.vuepress-blog-theme-content
-  font-size 16px
-  letter-spacing 0px
-  font-family PT Serif, Serif
-  color var(--theme-foreground-color)
-  position relative
- .post-title
-    padding-top 0 
 .article__header
   .post-title
     padding: 4.3rem 2.15rem 2.15rem;
@@ -123,7 +115,6 @@ export default {
 .article__header-con
   padding: 2.5rem 2.15rem 1rem;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
-
 .article-copyright
   display: block;
   margin: 2rem 0;
@@ -169,8 +160,6 @@ export default {
 abbr
   cursor help
 @media (max-width: $MQMobile)
-  .vuepress-blog-theme-content
-    padding-top 0
   .post-title
     margin-top 0
 </style>

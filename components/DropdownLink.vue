@@ -136,7 +136,7 @@ export default {
     background transparent
     border none
     font-weight 500
-    color $textColor
+    color var(--theme-foreground-color)
     &:hover
       border-color transparent
     .arrow
@@ -149,7 +149,7 @@ export default {
     font-weight 600
     font-size inherit
       &:hover
-        color $accentColor
+        color var(--theme-accent-color)
   .nav-dropdown
     .dropdown-item
       color inherit
@@ -172,14 +172,14 @@ export default {
         margin-bottom 0
         padding 0 1.5rem 0 1.25rem
         &:hover
-          color $accentColor
+          color var(--theme-accent-color)
         &.router-link-active
-          color $accentColor
+          color var(--theme-accent-color)
           &::after
             content ""
             width 0
             height 0
-            border-left 5px solid $accentColor
+            border-left 5px solid var(--theme-accent-color)
             border-top 3px solid transparent
             border-bottom 3px solid transparent
             position absolute

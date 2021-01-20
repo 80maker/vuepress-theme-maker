@@ -74,7 +74,7 @@ export default {
     vertical-align: bottom;
     box-sizing content-box
   &__name
-    font-family: Lobster,cursive,'Josefin Sans','PingFang SC','Microsoft YaHei';
+    font-family: var(--theme-font-logo);
     display block
     margin: 1.5rem;
     font-size: 1.714285rem;

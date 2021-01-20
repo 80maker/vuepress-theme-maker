@@ -3,13 +3,16 @@ $lightMode =
   --theme-background #ffffff url('../assets/images/bg.png')
   --theme-accent-color $accentColor
   --theme-foreground-color: $textColor;
-  --theme-accent-color-005: rgba(96, 125, 139, .05);
-  --theme-font-base: 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
-  --theme-accent-color-01: rgba(96, 125, 139, .1);
-  --theme-border-color: #e0e0e0;
-  --theme-font-label: Sarpanch, 'Josefin Sans', 'PingFang SC', 'Microsoft YaHei';
+  --theme-border-color: $borderColor;
   --theme-sidebar-background: $accentColor linear-gradient(to bottom, $accentColor 0%, darken($accentColor, 20%) 100%);
   --theme-card-background: #fff;
+  --theme-font-base: 'Josefin Sans','PingFang SC','Microsoft YaHei';
+  --theme-font-logo: Lobster,cursive,'Josefin Sans','PingFang SC','Microsoft YaHei';
+  --theme-font-menu: IM Fell DW Pica SC,'Josefin Sans','PingFang SC','Microsoft YaHei';
+  --theme-font-heading: impact,'Josefin Sans','PingFang SC','Microsoft YaHei';
+  --theme-font-label: Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei';
+  --theme-font-code: 'Fira Code',Consolas,monospace;
+  --theme-font-print: 'PingFang SC','Microsoft YaHei';
   --theme-highlight-00: #e3eaf2;
   --theme-highlight-01: #d0dae7; 
   --theme-highlight-01-048: alpha(#d0dae7, .48);
@@ -37,7 +40,7 @@ $darkMode =
   --theme-content-width: 660px;
   --theme-accent-color: $dark_accentColor;
   --theme-foreground-color: $dark_textColor;
-  --theme-border-color: #444;
+  --theme-border-color: $dark_borderColor;
   --theme-background: #202020;
   --theme-sidebar-background: #262626;
   --theme-card-background: $dark_cardBackgroundColor;

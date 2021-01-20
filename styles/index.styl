@@ -9,12 +9,15 @@
     color: #fff
 html
   min-height 100vh
+body
+  margin 0
 body, html
   font-size 14px
 #app
   overflow-x: hidden;
 body
-  font-family 'Josefin Sans','PingFang SC','Microsoft YaHei'
+  font-family var(--theme-font-base)
+  font-display swap
   color var(--theme-foreground-color)
   background var(--theme-background)
   background-attachment fixed
@@ -63,7 +66,7 @@ ul, ol
 h1
   font-size: 1.78571rem;
 h1,h2,h3,h4,h5,h6
-  font-family impact,'Josefin Sans','PingFang SC','Microsoft YaHei'
+  font-family var(--theme-font-heading)
   font-weight: 400;
   padding-bottom 0
   border-bottom none
@@ -139,7 +142,7 @@ img {
     font-size .85rem
     opacity .63
     padding-right .5rem
-    font-family Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei'
+    font-family var(--theme-font-label) 
   &__title
     font-size 1.15rem
 
@@ -155,7 +158,7 @@ img {
       background var(--theme-accent-color)
       color #ffffff
     > a
-      font-family Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei'
+      font-family var(--theme-font-label)
       margin: 0 3px;
       padding 0
       text-align center

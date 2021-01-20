@@ -69,7 +69,6 @@ export default {
     display: block;
     margin: 0 .5rem;
     line-height: 1;
-    font-family: Sarpanch,'Josefin Sans','PingFang SC','Microsoft YaHei';
     margin-bottom: .75rem;
     font-size: 1.4rem;
   &__name

@@ -1,7 +1,7 @@
 <template>
   <div class="theme-main__inner theme-tag">
     <div class="tag__list">
-      <h1 class="tag__title">{{$tag.list.length}} tags in total</h1>
+      <h2 class="tag__title">{{$tag.list.length}} tags in total</h2>
       <router-link class="tag__link" v-for="tag in $tag.list" :key="tag.name" :to="tag.path"># {{ tag.name }}</router-link>
     </div>
   </div>
@@ -17,7 +17,6 @@ export default {
   border-radius: 6px;
   padding: 2.15rem;
   &__title
-    font-family: impact,'Josefin Sans','PingFang SC','Microsoft YaHei';
     margin 0 0 1.5rem 0
     font-size: 1.78571rem;
     font-weight normal
