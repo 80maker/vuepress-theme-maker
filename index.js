@@ -8,11 +8,9 @@ module.exports = themeConfig => {
     nav: themeConfig.nav || [
       { text: '🏠 Home', link: '/' }
     ],
-    markdown: themeConfig.markdown || {
-      lineNumbers: true,
-      extractHeaders: [ 'h2', 'h3', 'h4' ]
-    },
-    social: themeConfig.social || []
+    wordPerminute: themeConfig.wordPerminute || {cn: 300, en: 160},
+    social: themeConfig.social || [],
+    dateFormat: themeConfig.dateFormat || 'MMM DD, YYYY'
   })
 
   const plugins = [

@@ -19,6 +19,10 @@
   </div>
 </template>
 <script>
+import dayjs from 'dayjs'
+import dayjsPluginUTC from 'dayjs/plugin/utc'
+
+dayjs.extend(dayjsPluginUTC)
 const DATE_MAP = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 export default {
   name: 'Home',
@@ -38,12 +42,9 @@ export default {
   },
   methods: {
     formateDate(val) {
-      const date = new Date(val);
-      const year = date.getFullYear();
-      const month = date.getMonth();
-      const day = `${date.getDate()}`;
-      const monthKey = DATE_MAP[month];
-      return `${monthKey} ${day.padStart(2, 0)}, ${year}`
+      return dayjs
+        .utc(val)
+        .format(this.$themeConfig.dateFormat)
     }
   }
 }

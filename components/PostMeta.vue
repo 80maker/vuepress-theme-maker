@@ -17,15 +17,15 @@
         {{ resolvedDate }}
       </time>
     </div>
-    <div class="post-meta__reading">
-      <i class="icon-time"></i>
-      {{$page.wordCount}} words in {{$page.readingTime}} min
-    </div>
     <div class="post-meta__cates" v-for="item in resolvedCates" :key="item.name">
       <i class="icon-cate"></i>
       <router-link :to="item.path">
         {{ item.name}}
       </router-link>
+    </div>
+    <div class="post-meta__reading">
+      <i class="icon-time"></i>
+      {{$page.wordCount}} words in {{$page.readingTime}} min
     </div>
   </div>
 </template>
@@ -59,7 +59,7 @@ export default {
     resolvedDate() {
       return dayjs
         .utc(this.date)
-        .format(this.$themeConfig.dateFormat || 'ddd MMM DD YYYY')
+        .format(this.$themeConfig.dateFormat)
     },
     resolvedCates() {
       let res = [];
