@@ -1,7 +1,7 @@
 {
   "name": "vuepress-theme-maker",
   "version": "0.2.4",
-  "description": "A flat and clean Blog Theme for VuePress",
+  "description": "🐉 A flat and clean Blog Theme for VuePress site | 一款多配置、简约风的VuePress主题.",
   "keywords": [
     "vuepress-theme-blog",
     "vuepress-theme",
@@ -21,6 +21,10 @@
   },
   "author": "80maker<cmgddd@126.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/80maker/vuepress-theme-maker/issues"
+  },
+  "homepage": "https://80shuo.com/",
   "dependencies": {
     "@vuepress/plugin-blog": "^1.9.3",
     "@vuepress/plugin-medium-zoom": "^1.8.0",
