@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import Sticker from './Sticker.vue'
+import Sticker from '@theme/components/Sticker.vue'
 let initTop
 // get offset top
 function getAbsoluteTop(dom) {

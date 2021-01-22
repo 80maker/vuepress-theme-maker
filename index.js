@@ -16,6 +16,7 @@ module.exports = themeConfig => {
   const plugins = [
     ['@vuepress/nprogress'],
     ['@vuepress/search'],
+    ['flowchart'],
     ['vuepress-plugin-container', {
       type: 'tip',
       defaultTitle: {
