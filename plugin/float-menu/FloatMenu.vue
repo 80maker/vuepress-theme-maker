@@ -32,7 +32,7 @@
 <script>
 import Toc from '@theme/components/Toc.vue'
 import DarkMode from '@theme/components/DarkMode.vue'
-import { getCssVar } from '@theme/util'
+import { getCssVar } from '../../util'
 export default {
   name: 'FloatMenu',
   components: {

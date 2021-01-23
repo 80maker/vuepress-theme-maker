@@ -47,7 +47,6 @@ module.exports = {
 ```
 npm run deploy
 ```
-
 ## Thanks to
 
 - [VuePress](https://vuepress.vuejs.org/)

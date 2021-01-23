@@ -31,7 +31,7 @@ import Post from '@theme/components/Post.vue'
 import FriendLink from '@theme/components/FriendLink.vue'
 import SideBar from '@theme/components/SideBar.vue'
 import SvgSprite from '@theme/components/SvgSprite.vue'
-import { resolveSidebarItems } from '@theme/util'
+import { resolveSidebarItems } from '../util'
 export default {
   name: 'Layout',
   components: {
