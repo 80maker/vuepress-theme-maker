@@ -1,8 +1,8 @@
 <template>
   <div class="theme-main__inner theme-tag">
-    <div class="tag__list">
-      <h2 class="tag__title">{{$tag.list.length}} tags in total</h2>
-      <router-link class="tag__link" v-for="tag in $tag.list" :key="tag.name" :to="tag.path"># {{ tag.name }}</router-link>
+    <div class="theme-tag__list">
+      <h2 class="theme-tag__title">{{$tag.list.length}} tags in total</h2>
+      <router-link class="theme-tag__link" v-for="tag in $tag.list" :key="tag.name" :to="tag.path"># {{ tag.name }}</router-link>
     </div>
   </div>
 </template>

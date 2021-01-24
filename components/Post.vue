@@ -50,6 +50,7 @@
             </li>
           </ul>
         </div>
+        <Reward v-if="$themeConfig.reward.enable"/>
       </div>
       <div class="article-footer">
         <PostTag v-if="$frontmatter.tags" :tags="$frontmatter.tags" />
@@ -64,6 +65,7 @@
 import PostTag from '@theme/components/PostTag.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
 import PostNav from '@theme/components/PostNav.vue'
+import Reward from '@theme/components/Reward.vue'
 import { Comment } from '@vuepress/plugin-blog/lib/client/components'
 export default {
   name: 'Post',
@@ -71,7 +73,8 @@ export default {
     PostTag,
     PostMeta,
     Comment,
-    PostNav
+    PostNav,
+    Reward
   },
   computed: {
     headerStyle() {

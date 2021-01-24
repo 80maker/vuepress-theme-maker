@@ -1,8 +1,8 @@
 <template>
-  <div class="theme-main__inner category">
-    <div class="category__list">
-      <h1 class="category__title">{{$category.list.length}} categories in total</h1>
-      <router-link class="category__link" v-for="item in $category.list" :key="item.name" :to="item.path">▪ {{ item.name }} [{{item.pages.length}}]</router-link>
+  <div class="theme-main__inner theme-category">
+    <div class="theme-category__list">
+      <h1 class="theme-category__title">{{$category.list.length}} categories in total</h1>
+      <router-link class="theme-category__link" v-for="item in $category.list" :key="item.name" :to="item.path">▪ {{ item.name }} [{{item.pages.length}}]</router-link>
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@ export default {
 }
 </script>
 <style lang="stylus">
-.category
+.theme-category
   background var(--theme-card-background)
   border-radius: 6px;
   padding: 2.15rem;

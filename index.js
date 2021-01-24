@@ -10,6 +10,7 @@ module.exports = themeConfig => {
     ],
     wordPerminute: themeConfig.wordPerminute || {cn: 300, en: 160},
     social: themeConfig.social || [],
+    reward: themeConfig.reward || {},
     dateFormat: themeConfig.dateFormat || 'MMM DD, YYYY'
   })
 
