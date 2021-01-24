@@ -10,8 +10,7 @@
       </div>
       <div class="theme-reward__box" v-if="activeIndex !== ''">
         <div class="theme-reward__pic" :style="{'backgroundColor': qrData.color}">
-          <img v-if="qrData.qrcode" :src="qrData.qrcode" :key="activeIndex">
-          <qrcode-vue v-else-if="qrData.url" :value="qrData.url" :size="size" foreground="#FFF" :background="qrData.color"/>
+          <img :src="qrData.qrcode" :key="activeIndex">
         </div>
         <div class="theme-reward__ft">
           <template v-if="qrData.url">
@@ -27,7 +26,6 @@
 </template>
 
 <script>
-import QrcodeVue from 'qrcode.vue';
 export default {
   name: 'Reward',
   data() {
@@ -44,9 +42,6 @@ export default {
         color: ''
       }
     }
-  },
-  components: {
-    QrcodeVue
   },
   methods: {
     activeStyle(item, index) {
