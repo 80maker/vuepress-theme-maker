@@ -50,7 +50,7 @@
             </li>
           </ul>
         </div>
-        <Reward v-if="$themeConfig.reward.enable"/>
+        <Reward v-if="isShowReward"/>
       </div>
       <div class="article-footer">
         <PostTag v-if="$frontmatter.tags" :tags="$frontmatter.tags" />
@@ -77,6 +77,12 @@ export default {
     Reward
   },
   computed: {
+    isShowReward() {
+      if (this.$frontmatter.reward === false) {
+        return false;
+      }
+      return this.$themeConfig.reward.enable
+    },
     headerStyle() {
       if (!this.$frontmatter.cover) return;
       return {
@@ -97,6 +103,9 @@ export default {
   border-radius: 6px;
   line-height 1.8
   color var(--theme-foreground-color)
+  h2, h3, h4, h5, h6
+    margin: 2rem 0 1rem;
+    font-weight: 700;
 .article-content
   a
     border-bottom: 1px dotted;

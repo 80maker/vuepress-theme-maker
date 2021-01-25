@@ -27,7 +27,7 @@ export default {
   },
   mounted() {
     window.addEventListener('keydown', (ev)=>{
-      if (ev.keyCode === 80 && ev.shiftKey && (ev.metaKey || ev.ctrlKey)) {
+      if (ev.key === 'k' && (ev.metaKey || ev.ctrlKey)) {
         return this.isShow = true;
       }
       if (ev.keyCode === 27) {

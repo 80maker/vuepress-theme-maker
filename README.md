@@ -13,6 +13,7 @@ A flat and clean Blog Theme for VuePress site. inspired by [Hexo-theme-inside](h
 - 基于官方博客插件`@vuepress/plugin-blog`制作
 - 扩展了Markdown语法,支持`footnote` `mark` `abbr` `task-lists`
 - 支持文章评论
+- 文章打赏模块
 - 内置友情链接页
 - 文章阅读时长估算
 - rss订阅及sitemap
