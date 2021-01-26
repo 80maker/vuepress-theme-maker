@@ -8,7 +8,7 @@
             <span class="archive__month"> {{key}} </span>
           </div>
           <div class="archive__leaf-list">
-            <a class="archive__leaf-item" :href="leafItem.path" v-for="leafItem in subItem" :key="leafItem.date">
+            <a class="archive__leaf-item" :href="leafItem.path" v-for="leafItem in subItem" :key="leafItem.key">
               <span class="archive__date">{{leafItem.date}}</span>
               <span class="archive__title">{{leafItem.title}}</span>
             </a>
