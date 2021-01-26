@@ -28,6 +28,7 @@ export default {
   mounted() {
     window.addEventListener('keydown', (ev)=>{
       if (ev.key === 'k' && (ev.metaKey || ev.ctrlKey)) {
+        ev.preventDefault();
         return this.isShow = true;
       }
       if (ev.keyCode === 27) {
