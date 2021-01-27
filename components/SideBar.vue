@@ -7,6 +7,7 @@
             draggable="false"
             class="theme-header__picture"
             :src="$themeConfig.logo"
+            alt="logo"
             width="160"
             height="160"/>
         </RouterLink>
