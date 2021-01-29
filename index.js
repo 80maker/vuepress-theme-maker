@@ -106,6 +106,7 @@ module.exports = (options, {themeConfig}) => {
         modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
       }
     ],
+    ['@vuepress/pwa', themeConfig.pwa || false],
     require('./plugin/demo-code'),
     require('./plugin/theme-utils'),
     require('./plugin/float-menu')
