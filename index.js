@@ -95,6 +95,7 @@ module.exports = (options, {themeConfig}) => {
         }
       ]
     }],
+    ['@vuepress/pwa', themeConfig.pwa || false],
     require('./plugin/demo-code'),
     require('./plugin/theme-utils'),
     require('./plugin/float-menu')
