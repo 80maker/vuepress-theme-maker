@@ -17,6 +17,7 @@ A flat and clean Blog Theme for VuePress site. inspired by [Hexo-theme-inside](h
 - 内置友情链接页
 - 文章阅读时长估算
 - rss订阅及sitemap
+- PWA支持
 - seo配置
 - 暗黑模式
 - 响应式主题
