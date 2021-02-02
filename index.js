@@ -71,7 +71,9 @@ module.exports = (options, {themeConfig}) => {
           itemPermalink: '/post/:year/:month/:day/:slug.html',
           pagination: {
             perPagePosts: 10,
-          },
+            prevText: '',
+            nextText: ''
+          }
         }
       ],
       frontmatters: [
@@ -81,7 +83,9 @@ module.exports = (options, {themeConfig}) => {
           path: '/tags/',
           frontmatter: { title: 'Tag' },
           pagination: {
-            lengthPerPage: 10
+            lengthPerPage: 10,
+            prevText: '',
+            nextText: ''
           }
         },
         {
@@ -90,7 +94,9 @@ module.exports = (options, {themeConfig}) => {
           path: '/categories/',
           frontmatter: { title: 'Category' },
           pagination: {
-            lengthPerPage: 10
+            lengthPerPage: 10,
+            prevText: '',
+            nextText: ''
           }
         }
       ]

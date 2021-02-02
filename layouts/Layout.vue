@@ -7,14 +7,16 @@
   >
     <SideBar/>
     <div class="theme-main">
-      <Home v-if="$page.pageType === 'home'" />
-      <Archive v-else-if="$page.pageType === 'archive'" />
-      <Category v-else-if="$page.pageType === 'category'" />
-      <CategoryItem v-else-if="$page.pageType === 'categoryItem'" />
-      <Tag v-else-if="$page.pageType === 'tag'" />
-      <TagItem v-else-if="$page.pageType === 'tagItem'" />
-      <FriendLink v-else-if="$page.pageType === 'friendLink'" />
-      <Post v-else></Post>
+      <slot name="main">
+        <Home v-if="$page.pageType === 'home'" />
+        <Archive v-else-if="$page.pageType === 'archive'" />
+        <Category v-else-if="$page.pageType === 'category'" />
+        <CategoryItem v-else-if="$page.pageType === 'categoryItem'" />
+        <Tag v-else-if="$page.pageType === 'tag'" />
+        <TagItem v-else-if="$page.pageType === 'tagItem'" />
+        <FriendLink v-else-if="$page.pageType === 'friendLink'" />
+        <Post v-else></Post>
+      </slot> 
     </div>
     <SvgSprite/>
   </div>
