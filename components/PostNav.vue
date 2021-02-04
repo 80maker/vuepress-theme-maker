@@ -1,47 +1,14 @@
 <template>
   <div class="post-operate">
-    <router-link v-if="prevPageItem" class="post-operate__prev" :to="prevPageItem.path">{{prevPageItem.title}}</router-link>
-    <router-link v-if="nextPageItem" class="post-operate__next" :to="nextPageItem.path">{{nextPageItem.title}}</router-link>
+    <router-link v-if="$mkPrevPageItem" class="post-operate__prev" :to="$mkPrevPageItem.path">{{$mkPrevPageItem.title}}</router-link>
+    <router-link v-if="$mkNextPageItem" class="post-operate__next" :to="$mkNextPageItem.path">{{$mkNextPageItem.title}}</router-link>
   </div>
 </template>
 <script>
+import mixins from '@theme/mixins';
 export default {
   name: 'PostNav',
-  computed: {
-    nextPageItem() {
-      let list = this.getArticleList();
-      const index = list.findIndex(item => {
-        return item.path === this.$page.path;
-      })
-      if (index === -1) {
-        return;
-      }
-      return list[index + 1];
-    },
-    prevPageItem() {
-      let list = this.getArticleList();
-      const index = list.findIndex(item => {
-        return item.path === this.$page.path;
-      })
-      if (index === -1) {
-        return;
-      }
-      return list[index - 1];
-    },
-  },
-  methods: {
-    getArticleList() {
-      let list = this.$site.pages.filter(item => {
-        return item.pid === 'post';
-      });
-      list = list.sort((a,b) => {
-        let time1 = new Date(a.frontmatter.date);
-        let time2 = new Date(b.frontmatter.date);
-        return time2 - time1;
-      })
-      return list;
-    }
-  }
+  mixins: [mixins]
 }
 </script>
 <style lang="stylus">
