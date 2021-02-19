@@ -22,7 +22,6 @@ export default {
   computed: {
     postList() {
       let list = [];
-      console.log(this.$pagination)
       this.$pagination.pages.map(item => {
         const date = new Date(item.frontmatter.date);
         list.push({

@@ -43,7 +43,7 @@ export default {
       list = list.sort((a,b) => {
         let time1 = new Date(a.frontmatter.date);
         let time2 = new Date(b.frontmatter.date);
-        return time2 - time1;
+        return time1 - time2;
       })
       return list;
     }
