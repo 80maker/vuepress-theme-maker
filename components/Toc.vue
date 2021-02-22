@@ -1,18 +1,20 @@
 <template>
-  <Sticker v-if="visible" class="theme-toc" v-bind="$attrs" :class="{'theme-toc--open': isShow}">
-    <div
-      v-for="(item, index) in $page.headers"
-      ref="chairTocItem"
-      :key="index"
-      class="theme-toc-item"
-      :class="[
-        `theme-toc-h${item.level}`,
-        { active: activeIndex === index },
-      ]"
-    >
-      <a :href="`#${item.slug}`" :title="item.title">{{ item.title }}</a>
-    </div>
-  </Sticker>
+  <transition name="collapse-transition">
+    <Sticker v-if="isShow" class="theme-toc" v-bind="$attrs">
+      <div
+        v-for="(item, index) in $page.headers"
+        ref="chairTocItem"
+        :key="index"
+        class="theme-toc-item"
+        :class="[
+          `theme-toc-h${item.level}`,
+          { active: activeIndex === index },
+        ]"
+      >
+        <a :href="`#${item.slug}`" :title="item.title">{{ item.title }}</a>
+      </div>
+    </Sticker>
+  </transition>
 </template>
 
 <script>
@@ -121,17 +123,26 @@ export default {
 }
 </script>
 <style lang="stylus">
+.collapse-transition-enter-active {
+  transition-duration: 378ms;
+  transform: translateX(0);
+  transition-property transform
+}
+.collapse-transition-leave-active {
+  transition: all 378ms;
+}
+.collapse-transition-enter, .collapse-transition-leave-to
+/* .collapse-transition-leave-active for below version 2.1.8 */ {
+  transform translateX(100%)
+  opacity: 0;
+}
 .table-of-contents
   display none !important
 .theme-toc
   opacity .9
   text-align left
-  transition-duration: 378ms;
-  transform: translateX(100%);
-  transition-property transform
   box-shadow: -2px 0 3px rgba(0,0,0,.1);
   position fixed
-  visibility hidden
   height 100vh
   max-width 252px
   overflow-y auto
@@ -143,10 +154,6 @@ export default {
   box-sizing border-box
   background: var(--theme-card-background);
   z-index 0
-  &--open
-    visibility visible
-    display block
-    transform translateX(0)
   .theme-toc-item
     position relative
     line-height: 1.4;

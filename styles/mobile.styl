@@ -20,7 +20,12 @@
       margin 0 auto
   .theme-sidebar
     border-right none
+    transition-property opacity
+    transition-duration .4s
   .theme-container
+    transition-delay .2s
+    transition-property background
+    transition-duration .4s
     &.sidebar-open
       background var(--theme-sidebar-background)
       .theme-sidebar
