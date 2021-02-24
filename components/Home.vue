@@ -16,9 +16,11 @@
         </footer>
       </div>
     </div>
+    <Pagination v-if="$pagination.length > 1"/>
   </div>
 </template>
 <script>
+import { Pagination } from '@vuepress/plugin-blog/lib/client/components';
 import dayjs from 'dayjs'
 import dayjsPluginUTC from 'dayjs/plugin/utc'
 
@@ -26,6 +28,9 @@ dayjs.extend(dayjsPluginUTC)
 const DATE_MAP = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 export default {
   name: 'Home',
+  components: {
+    Pagination
+  },
   computed: {
     // TODO 文章列表提取成公用
     articleList() {

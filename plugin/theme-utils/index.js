@@ -31,7 +31,7 @@ module.exports = (options = {}, context) => ({
       return $page.pageType = 'tag';
     } else if (/^\/tags\/\w/.test($page.path)) {
       return $page.pageType = 'tagItem';
-    } else if ($page.path === '/') {
+    } else if ($page.path === '/' || $page.path.startsWith('/page/')) {
       return $page.pageType = 'home';
     } else if ($page.path === '/friend-links/') {
       return $page.pageType = 'friendLink';
