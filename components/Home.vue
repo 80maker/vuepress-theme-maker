@@ -1,7 +1,7 @@
 <template>
   <div class="theme-main__inner home">
     <div class="article-list">
-      <div class="article-item" v-for="item in articleList">
+      <div class="article-item" v-for="item in $pagination.pages">
         <div v-if="item.frontmatter.cover" class="article-cover">
           <router-link :to="item.path">
             <img :src="item.frontmatter.cover" alt="cover"/>
@@ -30,20 +30,6 @@ export default {
   name: 'Home',
   components: {
     Pagination
-  },
-  computed: {
-    // TODO 文章列表提取成公用
-    articleList() {
-      let list = this.$site.pages.filter(item => {
-        return item.pid === 'post';
-      });
-      list = list.sort((a,b) => {
-        let time1 = new Date(a.frontmatter.date);
-        let time2 = new Date(b.frontmatter.date);
-        return time2 - time1;
-      })
-      return list;
-    }
   },
   methods: {
     formateDate(val) {
