@@ -45,12 +45,14 @@ export default {
   border-right 1px solid
   border-color var(--theme-border-color)
   &__inner
+    display: flex;
+    flex-direction column
+    align-content: flex-start
     margin-right -1rem
     padding-right 1rem
     box-sizing content-box
     width $sidebarWidth
-    height calc(100% - 70px)
-    padding-bottom 70px
+    height: 100%;
     overflow-y auto
     &::-webkit-scrollbar {
       width: 0;

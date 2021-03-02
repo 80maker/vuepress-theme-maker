@@ -26,9 +26,9 @@ export default {
 </script>
 <style lang="stylus">
   .theme-footer
-    position absolute
-    bottom 0
-    right 2rem
+    align-self flex-end
+    margin-top: auto;
+    padding-right: 2rem;
     text-align right
     font-size .85rem
     .social-links > a

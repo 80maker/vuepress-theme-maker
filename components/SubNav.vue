@@ -39,6 +39,7 @@ export default {
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  flex-shrink 0
   &__item
     position: relative;
     padding: 1.25rem 0;
