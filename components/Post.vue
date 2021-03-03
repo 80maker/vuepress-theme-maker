@@ -31,7 +31,7 @@
           />
       </header>
       <div class="article-con">
-        <Content class="article-content" itemprop="articleBody" />
+        <Content class="article-content" :class="{'copy-code-enabled': $themeConfig.copy}" itemprop="articleBody" />
         <div class="article-copyright">
           <ul>
             <li class="article-copyright__item">

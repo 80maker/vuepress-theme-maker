@@ -101,6 +101,7 @@ module.exports = (options, {themeConfig}) => {
       'vuepress-plugin-seo', themeConfig.seo || false
     ],
     ['@vuepress/pwa', themeConfig.pwa || false],
+    ['one-click-copy', themeConfig.copy || false],
     require('./plugin/demo-code'),
     require('./plugin/theme-utils'),
     require('./plugin/float-menu')

@@ -45,7 +45,11 @@
       padding 0
       background-color transparent
       border-radius 0
-
+  &.copy-code-enabled div[class*="language-"]:hover
+    &::before
+      opacity: 0
+    .code-copy
+      opacity: 1
   div[class*="language-"]
     position relative
     border-radius 6px
@@ -64,6 +68,8 @@
       background var(--theme-accent-color-005)
       position relative
       z-index 1
+      .code-copy
+        right: 1em
     &::before
       position absolute
       z-index 3
