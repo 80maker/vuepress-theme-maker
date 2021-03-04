@@ -19,7 +19,7 @@
         </div>
       </a>
     </div>
-    <div class="friend-link__content">
+    <div class="friend-link__content" :class="{'copy-code-enabled': $themeConfig.copy}">
       <Content itemprop="articleBody" />
       <Comment/>
     </div>

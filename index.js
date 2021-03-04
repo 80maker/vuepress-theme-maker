@@ -106,6 +106,9 @@ module.exports = (options, {themeConfig}) => {
     require('./plugin/theme-utils'),
     require('./plugin/float-menu')
   ];
+  if(themeConfig.palette) {
+    plugins.push(require('./plugin/theme-palette'));
+  }
   const config = {
     plugins,
     alias: {

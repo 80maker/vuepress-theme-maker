@@ -10,6 +10,7 @@
             alt="logo"
             width="160"
             height="160"/>
+            <ThemePalette v-if="$themeConfig.palette"/>
         </RouterLink>
         <RouterLink class="theme-header__name" to="/">
           {{$site.title}}
@@ -26,12 +27,14 @@
 import FooterBar from '@theme/components/FooterBar.vue'
 import Navbar from '@theme/components/Navbar.vue'
 import SubNav from '@theme/components/SubNav.vue'
+import ThemePalette from '@theme/plugin/theme-palette/ThemePalette.vue'
 export default {
   name: 'SideBar',
   components: {
     SubNav,
     Navbar,
-    FooterBar
+    FooterBar,
+    ThemePalette
   },
 }
 </script>
@@ -65,8 +68,19 @@ export default {
   background var(--theme-card-background)
   display: inline-block;
   &__logo
+    position relative
     display: inline-block;
     margin-top: 2.4rem;
+    .theme-palette
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      bottom: 20px;
+      left : 100px;
+      text-align: center;
+      background-color: var(--theme-card-background);
+      box-shadow: 0px 1px 5px var(--theme-border-color);
   &__picture
     padding: 2px;
     width: 8rem;
@@ -83,7 +97,7 @@ export default {
     font-size: 1.714285rem;
     transition: color .15s;
   &__slogan
-    padding: 0 1.6rem 1.5rem;
+    padding: 0 1.6rem 1rem;
     line-height: 1.5;
     opacity: .63;
 </style>
