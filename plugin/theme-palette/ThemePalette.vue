@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     setThemeColors(item){
-      this.themePaletteBox.innerHTML = `@media (prefers-color-scheme: dark) { html {${item.paletteVars.dark || ''}} } html.light {${item.paletteVars.light || ''}} html.dark {${item.paletteVars.dark || ''}}`;
+      this.themePaletteBox.innerHTML = `@media (prefers-color-scheme: dark) { html {${item.paletteVars.dark || ''}} } html,html.light {${item.paletteVars.light || ''}} html.dark {${item.paletteVars.dark || ''}}`;
       window.localStorage.setItem('__palette__', this.themePaletteBox.innerHTML);
     }
   }
