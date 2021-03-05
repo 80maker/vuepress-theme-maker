@@ -75,6 +75,9 @@ export default {
       left 1rem
       right 0
       width auto
+      .suggestion.focused a
+        background-color var(--theme-accent-color-005)
+        color var(--theme-accent-color)
 @media (min-width: $MQMobile)
   .nav-links a:hover, .nav-links a.router-link-active
     color var(--theme-accent-color)

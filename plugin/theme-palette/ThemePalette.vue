@@ -42,12 +42,20 @@ export default {
 
 <style lang="stylus">
 .theme-palette
-  display flex
+  display none
   align-items center
-  border-radius: 20px;
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background-color: var(--theme-card-background);
+  box-shadow: 0px 1px 5px var(--theme-border-color);
   &:hover
     min-width 110px
     padding-right 8px
+    & .theme-palette__list
+      visibility visible
   a
     background currentColor
     width 100%
@@ -65,6 +73,7 @@ export default {
     height 20px
     color var(--theme-accent-color)
   &__list
+    visibility hidden
     display flex
     width 100px
 </style>

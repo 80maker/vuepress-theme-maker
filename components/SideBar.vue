@@ -71,16 +71,13 @@ export default {
     position relative
     display: inline-block;
     margin-top: 2.4rem;
+    &:hover
+      .theme-palette
+        display flex 
     .theme-palette
       position: absolute;
-      width: 20px;
-      height: 20px;
-      line-height: 20px;
       bottom: 20px;
       left : 100px;
-      text-align: center;
-      background-color: var(--theme-card-background);
-      box-shadow: 0px 1px 5px var(--theme-border-color);
   &__picture
     padding: 2px;
     width: 8rem;

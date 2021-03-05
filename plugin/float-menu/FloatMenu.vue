@@ -4,7 +4,7 @@
     <div class="float-menu__list">
       <span class="icon-up" @click="scrollToTop"></span>
       <DarkMode/>
-      <span class="icon-sidebar" @click="handleToggleSideBar" v-if="width < mobileWidth"></span>
+      <span class="icon-sidebar" @click="handleToggleSideBar" v-if="width < narrowWidth"></span>
       <span class="icon-toc" v-if="$page.pid === 'post'" @click="toggleToc"></span>
       <span class="icon-search" @click.stop="toggleSearch"></span>
       
@@ -44,7 +44,7 @@ export default {
       isSHow: false,
       scrollTop: 0,
       count: 0,
-      mobileWidth: 0,
+      narrowWidth: 0,
       width: 0
     }
   },
@@ -56,7 +56,7 @@ export default {
     }
   },
   mounted() {
-    this.mobileWidth = parseInt(getCssVar('--theme-mobile-width'));
+    this.narrowWidth = parseInt(getCssVar('--theme-narrow-width'));
     this.width = window.innerWidth;
     window.addEventListener('resize', () => {
       this.width = window.innerWidth;
@@ -95,7 +95,7 @@ export default {
 </script>
 <style lang="stylus">
 :root
-  --theme-mobile-width $MQMobile
+  --theme-narrow-width $MQNarrow
 .float-menu-wrap
   position: fixed;
   right: 1rem;
@@ -208,7 +208,7 @@ export default {
       background-color inherit
       top 200%
       left 0
-@media (max-width: $MQMobile)
+@media (max-width: $MQNarrow)
   .float-menu-wrap .float-menu__list
     span.icon-sidebar
       display: block

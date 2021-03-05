@@ -1,9 +1,32 @@
 @media (max-width: $MQNarrow)
+  .theme-palette
+    display flex
   .theme-main
     margin-left 0
+    transform-origin: 0 42%;
+    transition-property transform border-radius
+    transition-duration .4s
+    &__inner
+      margin 0 auto
   .theme-sidebar
     z-index 0
     opacity 0
+    border-right none
+    transition-property opacity
+    transition-duration .4s
+  .theme-container
+    transition-delay .2s
+    transition-property background
+    transition-duration .4s
+    &.sidebar-open
+      .theme-sidebar
+        opacity 1
+      .theme-main
+        border-radius: .85rem;
+        transform: translate3d(302px, 0px, 0px);
+        &__inner
+          height 100vh
+          overflow hidden
 @media (min-width: $MQMobile)
   .theme-main__inner
     margin 2rem auto
@@ -71,6 +94,7 @@
       input
         width 100%
         left 0
+        background-color: #fff
     .nav-links .nav-item
       padding-left: 3rem;
       text-align: left;

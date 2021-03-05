@@ -97,4 +97,7 @@ export default {
       a.focused
         background-color var(--theme-accent-color-005)
         color var(--theme-accent-color)
+      .suggestion.focused a
+        background-color var(--theme-accent-color-005)
+        color var(--theme-accent-color)
 </style>
