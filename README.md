@@ -1,10 +1,10 @@
 # vuepress-theme-maker
 
+<p align="center">
+  <a href='https://80shuo.com/'><img src='https://80shuo.com/images/maker-logo.svg' height='120px'></a>
+</p>
+
 A flat and clean Blog Theme for VuePress site. inspired by [Hexo-theme-inside](https://github.com/ikeq/hexo-theme-inside)
-
-## Preview
-
-![预览](https://raw.githubusercontent.com/80maker/vuepress-theme-maker/main/blog/.vuepress/public/images/screenshot.webp)
 
 ## Features
 
@@ -17,6 +17,7 @@ A flat and clean Blog Theme for VuePress site. inspired by [Hexo-theme-inside](h
 - 内置友情链接页
 - 文章阅读时长估算
 - rss订阅及sitemap
+- 访客自定义主题
 - PWA支持
 - seo配置
 - 代码复制
@@ -42,15 +43,29 @@ module.exports = {
 }
 ```
 
+For more details, see [Theme Doc](https://80shuo.com/post/2020/12/23/maker.html)
+
 ## Demo
 
 [80shuo.com](https://github.com/80maker/80shuo)
+
+## Screenshot
+
+![](https://80shuo.com/images/screenshot-1.jpg)
+
+![](https://80shuo.com/images/screenshot-2.jpg)
+
+![](https://80shuo.com/images/screenshot-3.jpg)
 
 ## Deploy to Github Pages
 
 ```
 npm run deploy
 ```
+
+## Feedback
+
+Feedback to developer: https://github.com/80maker/vuepress-theme-maker/issues
 ## Thanks to
 
 - [VuePress](https://vuepress.vuejs.org/)
