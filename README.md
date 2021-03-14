@@ -73,4 +73,4 @@ Feedback to developer: https://github.com/80maker/vuepress-theme-maker/issues
 - [@vuepress/theme-blog](https://github.com/vuepress/vuepress-theme-blog)
 
 ### license
-[MIT](https://github.com/recoluan/vuepress-theme-reco/blob/master/LICENSE)
+[MIT](https://github.com/80maker/vuepress-theme-maker/blob/master/LICENSE)
