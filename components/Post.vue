@@ -55,7 +55,7 @@
       <div class="article-footer">
         <PostTag v-if="$frontmatter.tags" :tags="$frontmatter.tags" />
         <PostNav/>
-        <Comment/>
+        <Comments/>
       </div>
     </article>
   </div>
@@ -66,13 +66,13 @@ import PostTag from '@theme/components/PostTag.vue'
 import PostMeta from '@theme/components/PostMeta.vue'
 import PostNav from '@theme/components/PostNav.vue'
 import Reward from '@theme/components/Reward.vue'
-import { Comment } from '@vuepress/plugin-blog/lib/client/components'
+import Comments from '@theme/components/Comments.vue'
 export default {
   name: 'Post',
   components: {
     PostTag,
     PostMeta,
-    Comment,
+    Comments,
     PostNav,
     Reward
   },

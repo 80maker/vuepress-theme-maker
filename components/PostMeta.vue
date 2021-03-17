@@ -27,6 +27,10 @@
       <i class="icon-time"></i>
       {{$page.wordCount}} words in {{$page.readingTime}} min
     </div>
+    <div :id="pagePath" v-if="isShowReadCount" class="leancloud_visitors" data-flag-title="Your Article Title">
+        <i class="icon-eye"></i>
+        <i class="leancloud-visitors-count">--</i>
+    </div>
   </div>
 </template>
 
@@ -55,7 +59,21 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      pagePath: ''
+    }
+  },
   computed: {
+    isShowReadCount() {
+      let isShow = false;
+      try {
+        isShow = this.$themeConfig.blog.comment.visitor;
+      } catch (error) {
+        console.log(error);
+      }
+      return isShow;
+    },
     resolvedDate() {
       return dayjs
         .utc(this.date)
@@ -73,6 +91,9 @@ export default {
       return res;
     }
   },
+  mounted() {
+    this.pagePath = window.location.pathname;
+  }
 }
 </script>
 

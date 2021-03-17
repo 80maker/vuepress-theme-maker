@@ -21,16 +21,16 @@
     </div>
     <div class="friend-link__content" :class="{'copy-code-enabled': $themeConfig.copy}">
       <Content itemprop="articleBody" />
-      <Comment/>
+      <Comments/>
     </div>
   </div>
 </template>
 <script>
-import Comment from '@vuepress/plugin-blog/lib/client/components/Comment.vue'
+import Comments from '@theme/components/Comments.vue'
 export default {
   name: 'FriendLink',
   components: {
-    Comment
+    Comments
   },
   computed: {
     headerStyle() {
