@@ -12,7 +12,8 @@
     z-index 0
     opacity 0
     border-right none
-    transition-property opacity
+    transition-property visibility, opacity
+    visibility: hidden;
     transition-duration .4s
   .theme-container
     transition-delay .2s
@@ -20,6 +21,7 @@
     transition-duration .4s
     &.sidebar-open
       .theme-sidebar
+        visibility: visible;
         opacity 1
       .theme-main
         border-radius: .85rem;
@@ -43,7 +45,7 @@
       margin 0 auto
   .theme-sidebar
     border-right none
-    transition-property opacity
+    transition-property visibility, opacity
     transition-duration .4s
   .theme-container
     transition-delay .2s
