@@ -36,7 +36,8 @@
     "vuepress": "^1.7.1",
     "vuepress-plugin-flowchart": "^1.4.3",
     "vuepress-plugin-seo": "^0.1.4",
-    "vuepress-plugin-one-click-copy": "^1.0.2"
+    "vuepress-plugin-one-click-copy": "^1.0.2",
+    "valine": "^1.4.14"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
