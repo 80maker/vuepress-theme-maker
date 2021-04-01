@@ -27,17 +27,15 @@ export default {
       border-color: inherit;
       text-align: right;
       text-transform: capitalize;
-      white-space: pre;
-      height 3rem;
+      min-height 3rem;
       transition: all .15s;
       cursor pointer
       &:hover
-        color var(--theme-accent-color)
         font-size: 1.168rem;
         & > a:after
           background-color: var(--theme-accent-color);
           background-image: none;
-      > a
+      > a, .dropdown-title
         display block
         line-height 3rem
         height 100%

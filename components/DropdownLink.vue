@@ -3,29 +3,16 @@
     class="dropdown-wrapper"
     :class="{ open }"
   >
-    <button
+    <a
+      href="javascript:;"
       class="dropdown-title"
-      type="button"
-      :aria-label="dropdownAriaLabel"
-      @click="handleDropdown"
-    >
-      <span class="title">{{ item.text }}</span>
-      <span
-        class="arrow down"
-      />
-    </button>
-    <button
-      class="mobile-dropdown-title"
-      type="button"
       :aria-label="dropdownAriaLabel"
       @click="setOpen(!open)"
     >
       <span class="title">{{ item.text }}</span>
-      <span
-        class="arrow"
-        :class="open ? 'down' : 'right'"
-      />
-    </button>
+      <i class="icon-plus-circle" v-if="!open"/>
+      <i class="icon-minus-circle" v-else/>
+    </a>
 
     <DropdownTransition>
       <ul
@@ -126,116 +113,52 @@ export default {
 <style lang="stylus">
 .dropdown-wrapper
   cursor pointer
+  display flex
+  flex-direction column
   .dropdown-title
-    display block
-    font-size 0.9rem
-    font-family inherit
-    cursor inherit
-    padding inherit
-    line-height 1.4rem
-    background transparent
-    border none
-    font-weight 500
-    color var(--theme-foreground-color)
-    &:hover
-      border-color transparent
-    .arrow
-      vertical-align middle
-      margin-top -1px
-      margin-left 0.4rem
-  .mobile-dropdown-title
-    @extends .dropdown-title
+    &:after
+      display none
+  i
+    color var(--theme-accent-color-08)
+    position absolute
+    font-size .5rem
+    right 0
+    transform: translate(50%, 0);
+  &.open .nav-dropdown
+    // override the inline style.
+    display block !important
+  &.open .dropdown-title
+    font-size 1.168rem
+    color var(--theme-accent-color)
+  &.open:blur
     display none
-    font-weight 600
-    font-size inherit
-      &:hover
-        color var(--theme-accent-color)
   .nav-dropdown
-    .dropdown-item
-      color inherit
-      line-height 1.7rem
-      h4
-        margin 0.45rem 0 0
-        border-top 1px solid #eee
-        padding 1rem 1.5rem 0.45rem 1.25rem
-      .dropdown-subitem-wrapper
-        padding 0
-        list-style none
-        .dropdown-subitem
-          font-size 0.9em
-      a
-        display block
-        line-height 1.7rem
-        position relative
-        border-bottom none
-        font-weight 400
-        margin-bottom 0
-        padding 0 1.5rem 0 1.25rem
-        &:hover
-          color var(--theme-accent-color)
-        &.router-link-active
-          color var(--theme-accent-color)
-          &::after
-            content ""
-            width 0
-            height 0
-            border-left 5px solid var(--theme-accent-color)
-            border-top 3px solid transparent
-            border-bottom 3px solid transparent
-            position absolute
-            top calc(50% - 2px)
-            left 9px
-      &:first-child h4
-        margin-top 0
-        padding-top 0
-        border-top 0
-@media (max-width: $MQMobile)
-  .dropdown-wrapper
-    &.open .dropdown-title
-      margin-bottom 0.5rem
-    .dropdown-title
-      display: none
-    .mobile-dropdown-title
-      display: block
-    .nav-dropdown
+      font-size 1rem
       transition height .1s ease-out
       overflow hidden
+      list-style none
+      margin 0
+      margin-top .5rem
       .dropdown-item
+        line-height 3rem
         h4
+          padding-left 1rem
           border-top 0
           margin-top 0
           padding-top 0
+          margin-bottom .5rem
         h4, & > a
-          font-size 15px
-          line-height 2rem
         .dropdown-subitem
-          font-size 14px
+          list-style none
+          line-height 2.5rem
+          font-size 12px
           padding-left 1rem
-@media (min-width: $MQMobile)
+@media (max-width: $MQNarrow)
   .dropdown-wrapper
-    height 1.8rem
-    &:hover .nav-dropdown,
-    &.open .nav-dropdown
-      // override the inline style.
-      display block !important
-    &.open:blur
-      display none
-    .nav-dropdown
-      display none
-      // Avoid height shaked by clicking
-      height auto !important
-      box-sizing border-box;
-      max-height calc(100vh - 2.7rem)
-      overflow-y auto
-      position absolute
-      top 100%
-      right 0
-      background-color #fff
-      padding 0.6rem 0
-      border 1px solid #ddd
-      border-bottom-color #ccc
-      text-align left
-      border-radius 0.25rem
-      white-space nowrap
-      margin 0
+    i
+      color #fff
+      opacity .5
+      right 1rem
+    .dropdown-item
+      color #fff
 </style>

@@ -21,7 +21,7 @@
     </div>
     <div class="friend-link__content" :class="{'copy-code-enabled': $themeConfig.copy}">
       <Content itemprop="articleBody" />
-      <Comments/>
+      <Comments class="mt-4"/>
     </div>
   </div>
 </template>
