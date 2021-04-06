@@ -7,15 +7,20 @@
         <span class="post-list__title">{{item.title}}</span>
       </a>
     </div>
+    <Pagination v-if="$pagination.length > 1"/>
   </div>
 </template>
 <script>
+import { Pagination } from '@vuepress/plugin-blog/lib/client/components';
 export default {
   name: 'TagItem',
+  components: {
+    Pagination
+  },
   computed: {
     postList() {
       let list = [];
-      this.$currentTag.pages.map(item => {
+      this.$pagination.pages.map(item => {
         const date = new Date(item.frontmatter.date);
         list.push({
           ...item,
