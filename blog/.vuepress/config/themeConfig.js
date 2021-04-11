@@ -30,5 +30,8 @@ module.exports = {
       link: '/rss.xml'
     }
   ],
-  copyright: '© 2020 ❤️ <a target="_blank" href="https://17ria.com/">Neil Chen</a>'
+  copyright: '© 2020 ❤️ <a target="_blank" href="https://17ria.com/">Neil Chen</a>',
+  blog: {
+    comment: {}
+  }
 }
