@@ -91,7 +91,7 @@ export default {
       }
     },
     pageLink() {
-      return `${this.$page.hostname}${this.$page.path}`;
+      return `${this.$themeConfig.hostname}${this.$page.path}`;
     }
   }
 }

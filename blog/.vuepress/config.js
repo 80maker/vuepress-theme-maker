@@ -13,6 +13,5 @@ module.exports = {
     }
   },
   theme: require.resolve('../../index'), // 使用本地主题
-  themeConfig: require('./config/themeConfig'),
-  plugins: require('./config/plugins')
+  themeConfig: require('./config/themeConfig')
 }

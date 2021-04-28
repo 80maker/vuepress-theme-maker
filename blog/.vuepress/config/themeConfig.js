@@ -30,5 +30,54 @@ module.exports = {
       link: '/rss.xml'
     }
   ],
-  copyright: '© 2020 ❤️ <a target="_blank" href="https://17ria.com/">Neil Chen</a>'
+  copyright: '© 2020 ❤️ <a target="_blank" href="https://17ria.com/">Neil Chen</a>',
+  blog: {
+    directories: [
+      {
+        id: 'post',
+        dirname: '_post',
+        path: '/',
+        itemPermalink: '/post/:year/:month/:day/:slug.html',
+        frontmatter: { title: '' },
+        pagination: {
+          perPagePosts: 10,
+          prevText: '',
+          nextText: ''
+        },
+      }
+    ],
+    frontmatters: [
+      {
+        id: "tag",
+        keys: ['tag', 'tags'],
+        path: '/tags/',
+        frontmatter: { title: 'Tag' },
+        pagination: {
+          lengthPerPage: 10,
+          prevText: '',
+          nextText: ''
+        }
+      },
+      {
+        id: "category",
+        keys: ['category', 'categories'],
+        path: '/categories/',
+        frontmatter: { title: 'Category' },
+        pagination: {
+          lengthPerPage: 10,
+          prevText: '',
+          nextText: ''
+        }
+      }
+    ],
+    sitemap: {
+      hostname: 'https://80shuo.com',
+      exclude: ['/404.html']
+    },
+    feed: {
+      canonical_base: 'http://80shuo.com',
+    },
+    palette: {},
+    comment: {}
+  }
 }

@@ -5,7 +5,7 @@
         <div v-if="item.frontmatter.cover" class="article-cover">
           <router-link :to="item.path">
             <img :src="item.frontmatter.cover" alt="cover"/>
-            <ThemePalette/>
+            <ThemePalette v-if="$themeConfig.palette"/>
           </router-link>
         </div>
         <h3 class="article-title">

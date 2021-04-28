@@ -20,7 +20,6 @@ const wordcount = function (content) {
 module.exports = (options = {}, context) => ({
   name: 'maker-theme-utils',
   extendPageData($page) {
-    $page.hostname = context.themeConfig.hostname;
     if ($page.path === '/archives/') {
       return $page.pageType = 'archive';
     } else if ($page.path === '/categories/') {
@@ -42,5 +41,14 @@ module.exports = (options = {}, context) => ({
       $page.wordCount = wordcount(content);
       $page.readingTime = calcReadingTime(content, context.themeConfig.wordPerminute);
     }
+  },
+  additionalPages() {
+    const pages = [{
+      path: '/archives/',
+      frontmatter: {
+        title: 'Archive'
+      }
+    }];
+    return pages;
   }
 })

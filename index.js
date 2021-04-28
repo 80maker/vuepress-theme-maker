@@ -8,6 +8,7 @@ module.exports = (options, {themeConfig}) => {
     nav: themeConfig.nav || [
       { text: '🏠 Home', link: '/' }
     ],
+    hostname: themeConfig.hostname || '',
     wordPerminute: themeConfig.wordPerminute || {cn: 300, en: 160},
     social: themeConfig.social || [],
     reward: themeConfig.reward || {},

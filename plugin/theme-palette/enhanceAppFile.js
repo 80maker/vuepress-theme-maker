@@ -1,6 +1,6 @@
   
-import ThmePalette from './ThmePalette.vue'
+import ThemePalette from './ThemePalette.vue'
 
 export default ({ Vue }) => {
-  Vue.component('ThmePalette', ThmePalette)
+  Vue.component('ThemePalette', ThemePalette)
 }
