@@ -15,7 +15,7 @@
           <p>{{item.desc}}</p>
         </div>
         <div class="friend-link__image">
-          <img :class="{'roundness': item.roundness}" :src="item.logo" alt="">
+          <img :class="{'roundness': item.roundness}" :src="$withBase(item.logo)" alt="">
         </div>
       </a>
     </div>

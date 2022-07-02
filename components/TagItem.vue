@@ -2,10 +2,10 @@
   <div class="theme-main__inner tag-item">
     <h1 class="tag__title"># {{$currentTag.key}}</h1>
     <div class="post-list">
-      <a class="post-list__item" :href="item.path" v-for="item in postList" :key="item.date">
+      <router-link class="post-list__item" :to="item.path" v-for="item in postList" :key="item.path">
         <span class="post-list__date">{{item.date}}</span>
         <span class="post-list__title">{{item.title}}</span>
-      </a>
+      </router-link>
     </div>
     <Pagination v-if="$pagination.length > 1"/>
   </div>

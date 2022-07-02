@@ -4,7 +4,7 @@
       <div class="article-item" v-for="item in $pagination.pages">
         <div v-if="item.frontmatter.cover" class="article-cover">
           <router-link :to="item.path">
-            <img :src="item.frontmatter.cover" alt="cover"/>
+            <img :src="$withBase(item.frontmatter.cover)" alt="cover"/>
             <ThemePalette v-if="$themeConfig.palette"/>
           </router-link>
         </div>

@@ -45,8 +45,8 @@
             </li>
             <li class="article-copyright__item">
               <strong class="article-copyright__title">Link<span>:</span></strong>
-              <p class="article-copyright__text"><a :href="pageLink"
-                  :title="$page.title">{{pageLink}}</a></p>
+              <p class="article-copyright__text"><a :href="$withBase(pageLink)"
+                  :title="$page.title">{{$withBase(pageLink)}}</a></p>
             </li>
           </ul>
         </div>
