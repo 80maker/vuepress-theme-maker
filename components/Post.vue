@@ -86,7 +86,7 @@ export default {
     headerStyle() {
       if (!this.$frontmatter.cover) return;
       return {
-        'background-image': `url(${this.$frontmatter.cover})`, 
+        'background-image': `url(${this.$withBase(this.$frontmatter.cover)})`, 
         'background-color': this.$frontmatter.coverBgColor
       }
     },
